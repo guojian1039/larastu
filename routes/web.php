@@ -9,7 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware'=>['auth','verified']],function (){
+    Route::get('/', 'IndexController@index');
+});
 
-Route::get('/', 'IndexController@index');
 
 Auth::routes();
