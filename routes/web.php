@@ -14,4 +14,4 @@ Route::group(['middleware'=>['auth','verified']],function (){
 });
 
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
