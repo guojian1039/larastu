@@ -1,14 +1,12 @@
 <?php
 
 namespace App\Models;
-
-use Dcat\Admin\Traits\HasDateTimeFormatter;
-
+use App\Models\Traits\DefaultDatetimeFormat;
 use Illuminate\Database\Eloquent\Model;
 
 class UserAddress extends Model
 {
-	use HasDateTimeFormatter;
+	use DefaultDatetimeFormat;
     protected $table = 'user_addresses';
     
 }

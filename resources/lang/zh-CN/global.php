@@ -29,6 +29,10 @@ return [
         'create'   => '创建',
         'root'     => '顶级',
         'scaffold' => '代码生成器',
+        'active'=>'活动',
+        'ActiveProducts'=>'活动商品',
+        'DiscountProducts'=>'折扣商品',
+        'Discount_products'=>'折扣商品',
     ],
 
     'options' => [

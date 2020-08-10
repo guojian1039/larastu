@@ -11,7 +11,7 @@ return [
     | login page.
     |
     */
-    'name' => '金融ERP管理系统',
+    'name' => '商业电子商务系统',
 
     /*
     |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<img src="/vendors/dcat-admin/images/logo.png" width="35"> &nbsp;金融ERP管理系统',
+    'logo' => '<img src="/vendors/dcat-admin/images/logo.png" width="35"> &nbsp;商业电子商务系统',
 
     /*
     |--------------------------------------------------------------------------
@@ -156,7 +156,7 @@ return [
         | The global Grid action display class.
         |--------------------------------------------------------------------------
         */
-        'grid_action_class' => Dcat\Admin\Grid\Displayers\DropdownActions::class,
+        'grid_action_class' => Dcat\Admin\Grid\Displayers\Actions::class,
     ],
 
     /*
