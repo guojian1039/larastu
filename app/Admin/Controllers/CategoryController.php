@@ -70,6 +70,7 @@ class CategoryController extends AdminController
                 //$pcategory=\App\Models\Category::query()->where('parent_id')
                 $form->select('parent_id', __('父类目'))->ajax('/api/categories');
             }
+            $form->image('image', __('图片'))->rules('image')->uniqueName();
             $form->disableViewButton();
         });
 

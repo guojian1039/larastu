@@ -40,6 +40,9 @@ class Category extends Model implements  Sortable
     {
         return Category::query()->whereIn('id',$this->path_ids)->orderBy('level')->get();
     }
+    public function getChildIdsAttribute(){
+        return Category::query()->where('path','like',$this->path.$this->id.'-%')->get('id')->toArray();
+    }
     public static function boot()
     {
         parent::boot();

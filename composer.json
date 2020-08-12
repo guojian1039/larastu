@@ -13,11 +13,15 @@
         "dcat/laravel-admin": "^1.6",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
+        "gregwar/captcha": "^1.1",
         "guzzlehttp/guzzle": "^7.0",
+        "hieu-le/active": "^7.0",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
-        "overtrue/laravel-lang": "^4.0"
+        "mews/captcha": "^3.1",
+        "overtrue/laravel-lang": "^4.0",
+        "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.7",

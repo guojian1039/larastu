@@ -90,7 +90,7 @@ class ProductService{
             $products= $builder->limit($limit)->get();
         }
         else{
-            $products= $builder->paginate();
+            $products= $builder->paginate(12);
         }
         return $products;
     }

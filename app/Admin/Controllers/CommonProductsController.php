@@ -79,7 +79,7 @@ abstract  class CommonProductsController extends  AdminController
                     return [$category->id=>$category->full_name];
                 }
             });
-        $form->image('image', __('封面'))->rules('required|image')->move("product")->uniqueName();;
+        $form->image('image', __('封面'))->rules('required|image')->move("product")->uniqueName();
         $form->textarea('description', __('描述'))->rules('required');
         $form->switch('on_sale', __('是否上架'))->default(1);
         $form->switch('recommend', __('是否推荐'))->default(1);

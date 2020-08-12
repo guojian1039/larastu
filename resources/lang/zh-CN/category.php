@@ -1,7 +1,8 @@
 <?php 
 return [
     'labels' => [
-        'Category' => 'Category',
+        'Category' => '分类',
+        'uploader.drag_file'=>'打开',
     ],
     'fields' => [
         'name' => '分类名称',
