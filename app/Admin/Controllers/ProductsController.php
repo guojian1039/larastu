@@ -47,6 +47,8 @@ class ProductsController extends CommonProductsController
         $grid->recommend('推荐')->switch();
 
         $grid->disableViewButton(true);
+        //$grid->setActionClass(Grid\Displayers\ContextMenuActions::class);
+        $grid->setActionClass(Grid\Displayers\DropdownActions::class);
         $grid->actions(function ($actions) {
             //$actions->append(CreateCategory::make());
             $actions->append(TranslateProduct::make(Product::TYPE_ACTIVE));
