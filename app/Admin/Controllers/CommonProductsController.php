@@ -43,7 +43,7 @@ abstract  class CommonProductsController extends  AdminController
                 $batch->disableDelete();
             }) ;
         });
-        $grid->setActionClass(Grid\Displayers\Actions::class);
+        //$grid->setActionClass(Grid\Displayers\Actions::class);
         $this->customGrid($grid);
 
         return $grid;
