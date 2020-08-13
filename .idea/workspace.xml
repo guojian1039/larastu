@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c5d5903-1bd0-4b06-9571-d7baeccec364" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/banner/banner-image-9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/brandlogo/brand-logo-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/brandlogo/brand-logo-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/brandlogo/brand-logo-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/brandlogo/brand-logo-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/brandlogo/brand-logo-5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/category/category-image-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/category/category-image-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/category/category-image-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/category/category-image-4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/category/category-image-5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/category/category-image-6.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,8 +17,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="350">
+              <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -192,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Admin/Controllers/ActiveProductsController.php" />
         <option value="$PROJECT_DIR$/app/Admin/Controllers/SeckillProductsController.php" />
         <option value="$PROJECT_DIR$/app/Admin/Forms/ProductSeckill.php" />
         <option value="$PROJECT_DIR$/app/Admin/Actions/Grid/CrowdfundingTransProduct.php" />
@@ -243,6 +213,7 @@
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_07_20_132346_add_avatar_to_users_table.php" />
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -386,12 +357,12 @@
       <workItem from="1597022185422" duration="19435000" />
       <workItem from="1597108046338" duration="20927000" />
       <workItem from="1597194913792" duration="22687000" />
-      <workItem from="1597280313197" duration="7521000" />
+      <workItem from="1597280313197" duration="7966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197001000" />
+    <option name="totallyTimeSpent" value="197446000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="510" y="78" width="1382" height="735" extended-state="0" />
@@ -820,8 +791,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="350">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
           <folding />
         </state>
       </provider>
