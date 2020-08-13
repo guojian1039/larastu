@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2020-08-10 16:17:42
+Date: 2020-08-13 08:51:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -93,7 +93,7 @@ CREATE TABLE `admin_operation_log` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `admin_operation_log_user_id_index` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1557 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=1701 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_operation_log
@@ -1654,6 +1654,150 @@ INSERT INTO `admin_operation_log` VALUES ('1553', '1', 'admin/orders', 'GET', '1
 INSERT INTO `admin_operation_log` VALUES ('1554', '1', 'admin/orders/14', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-10 15:20:28', '2020-08-10 15:20:28');
 INSERT INTO `admin_operation_log` VALUES ('1555', '1', 'admin/orders', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-10 15:20:32', '2020-08-10 15:20:32');
 INSERT INTO `admin_operation_log` VALUES ('1556', '1', 'admin/products', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-10 15:21:06', '2020-08-10 15:21:06');
+INSERT INTO `admin_operation_log` VALUES ('1557', '1', 'admin/products', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-10 16:32:52', '2020-08-10 16:32:52');
+INSERT INTO `admin_operation_log` VALUES ('1558', '1', 'admin/products', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"page\":\"2\"}', '2020-08-10 16:33:39', '2020-08-10 16:33:39');
+INSERT INTO `admin_operation_log` VALUES ('1559', '1', 'admin/products', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"page\":\"3\"}', '2020-08-10 16:33:45', '2020-08-10 16:33:45');
+INSERT INTO `admin_operation_log` VALUES ('1560', '1', 'admin/products', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"page\":\"4\"}', '2020-08-10 16:33:56', '2020-08-10 16:33:56');
+INSERT INTO `admin_operation_log` VALUES ('1561', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-10 16:47:23', '2020-08-10 16:47:23');
+INSERT INTO `admin_operation_log` VALUES ('1562', '0', 'admin/auth/login', 'GET', '127.0.0.1', '[]', '2020-08-11 14:09:43', '2020-08-11 14:09:43');
+INSERT INTO `admin_operation_log` VALUES ('1563', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"Pxu9e2PCR0t9iKLhWCKswgdUJcXSFlDkMyDOglxf\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-11 14:09:57', '2020-08-11 14:09:57');
+INSERT INTO `admin_operation_log` VALUES ('1564', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"Pxu9e2PCR0t9iKLhWCKswgdUJcXSFlDkMyDOglxf\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-11 14:09:57', '2020-08-11 14:09:57');
+INSERT INTO `admin_operation_log` VALUES ('1565', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"Pxu9e2PCR0t9iKLhWCKswgdUJcXSFlDkMyDOglxf\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-11 14:09:57', '2020-08-11 14:09:57');
+INSERT INTO `admin_operation_log` VALUES ('1566', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"Pxu9e2PCR0t9iKLhWCKswgdUJcXSFlDkMyDOglxf\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-11 14:09:57', '2020-08-11 14:09:57');
+INSERT INTO `admin_operation_log` VALUES ('1567', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"Pxu9e2PCR0t9iKLhWCKswgdUJcXSFlDkMyDOglxf\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-11 14:09:57', '2020-08-11 14:09:57');
+INSERT INTO `admin_operation_log` VALUES ('1568', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"Pxu9e2PCR0t9iKLhWCKswgdUJcXSFlDkMyDOglxf\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-11 14:09:57', '2020-08-11 14:09:57');
+INSERT INTO `admin_operation_log` VALUES ('1569', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-11 14:09:59', '2020-08-11 14:09:59');
+INSERT INTO `admin_operation_log` VALUES ('1570', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-11 14:09:59', '2020-08-11 14:09:59');
+INSERT INTO `admin_operation_log` VALUES ('1571', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-11 14:09:59', '2020-08-11 14:09:59');
+INSERT INTO `admin_operation_log` VALUES ('1572', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-11 14:09:59', '2020-08-11 14:09:59');
+INSERT INTO `admin_operation_log` VALUES ('1573', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-11 14:09:59', '2020-08-11 14:09:59');
+INSERT INTO `admin_operation_log` VALUES ('1574', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-11 14:09:59', '2020-08-11 14:09:59');
+INSERT INTO `admin_operation_log` VALUES ('1575', '1', 'admin/seckill_products', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 14:10:07', '2020-08-11 14:10:07');
+INSERT INTO `admin_operation_log` VALUES ('1576', '1', 'admin/ads', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:19:25', '2020-08-11 15:19:25');
+INSERT INTO `admin_operation_log` VALUES ('1577', '1', 'admin/ads/9/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:21:01', '2020-08-11 15:21:01');
+INSERT INTO `admin_operation_log` VALUES ('1578', '1', 'admin/ads', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:21:09', '2020-08-11 15:21:09');
+INSERT INTO `admin_operation_log` VALUES ('1579', '1', 'admin/ads/10/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:21:11', '2020-08-11 15:21:11');
+INSERT INTO `admin_operation_log` VALUES ('1580', '1', 'admin/ads', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:21:17', '2020-08-11 15:21:17');
+INSERT INTO `admin_operation_log` VALUES ('1581', '1', 'admin/ads/9/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:23:35', '2020-08-11 15:23:35');
+INSERT INTO `admin_operation_log` VALUES ('1582', '1', 'admin/ads/9', 'PUT', '127.0.0.1', '{\"name\":\"bannerl\",\"image\":\"ads\\/09aadfae69c36a7379b24fe6f6ff5a1e.jpg\",\"file-image\":null,\"_file_\":null,\"url\":\"\\/\",\"width\":\"840\",\"height\":\"171\",\"_token\":\"A5NilMIOcoj1KJ7bKez2N6E3Nu6EyjBQ62pziKwI\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/test.xslp.cn:8080\\/admin\\/ads\"}', '2020-08-11 15:23:42', '2020-08-11 15:23:42');
+INSERT INTO `admin_operation_log` VALUES ('1583', '1', 'admin/ads', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:23:43', '2020-08-11 15:23:43');
+INSERT INTO `admin_operation_log` VALUES ('1584', '1', 'admin/ads/9/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:24:15', '2020-08-11 15:24:15');
+INSERT INTO `admin_operation_log` VALUES ('1585', '1', 'admin/ads', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:25:51', '2020-08-11 15:25:51');
+INSERT INTO `admin_operation_log` VALUES ('1586', '1', 'admin/ads/12/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:26:02', '2020-08-11 15:26:02');
+INSERT INTO `admin_operation_log` VALUES ('1587', '1', 'admin/ads', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:35:14', '2020-08-11 15:35:14');
+INSERT INTO `admin_operation_log` VALUES ('1588', '1', 'admin/ads/13/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:35:21', '2020-08-11 15:35:21');
+INSERT INTO `admin_operation_log` VALUES ('1589', '1', 'admin/ads', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:36:13', '2020-08-11 15:36:13');
+INSERT INTO `admin_operation_log` VALUES ('1590', '1', 'admin/ads/11/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-11 15:36:37', '2020-08-11 15:36:37');
+INSERT INTO `admin_operation_log` VALUES ('1591', '0', 'admin/auth/login', 'GET', '127.0.0.1', '[]', '2020-08-12 10:23:48', '2020-08-12 10:23:48');
+INSERT INTO `admin_operation_log` VALUES ('1592', '0', 'admin/auth/login', 'GET', '127.0.0.1', '[]', '2020-08-12 10:25:17', '2020-08-12 10:25:17');
+INSERT INTO `admin_operation_log` VALUES ('1593', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"afBrtvvJchbQneCrWDpYiDEIvcvpt1FdrDwJFc2m\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 10:25:22', '2020-08-12 10:25:22');
+INSERT INTO `admin_operation_log` VALUES ('1594', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"afBrtvvJchbQneCrWDpYiDEIvcvpt1FdrDwJFc2m\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 10:25:22', '2020-08-12 10:25:22');
+INSERT INTO `admin_operation_log` VALUES ('1595', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"afBrtvvJchbQneCrWDpYiDEIvcvpt1FdrDwJFc2m\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 10:25:22', '2020-08-12 10:25:22');
+INSERT INTO `admin_operation_log` VALUES ('1596', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"afBrtvvJchbQneCrWDpYiDEIvcvpt1FdrDwJFc2m\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 10:25:23', '2020-08-12 10:25:23');
+INSERT INTO `admin_operation_log` VALUES ('1597', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"afBrtvvJchbQneCrWDpYiDEIvcvpt1FdrDwJFc2m\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 10:25:23', '2020-08-12 10:25:23');
+INSERT INTO `admin_operation_log` VALUES ('1598', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-12 10:25:23', '2020-08-12 10:25:23');
+INSERT INTO `admin_operation_log` VALUES ('1599', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-12 10:25:23', '2020-08-12 10:25:23');
+INSERT INTO `admin_operation_log` VALUES ('1600', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-12 10:25:23', '2020-08-12 10:25:23');
+INSERT INTO `admin_operation_log` VALUES ('1601', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-12 10:25:42', '2020-08-12 10:25:42');
+INSERT INTO `admin_operation_log` VALUES ('1602', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-12 10:25:51', '2020-08-12 10:25:51');
+INSERT INTO `admin_operation_log` VALUES ('1603', '1', 'admin/auth/logout', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 10:25:57', '2020-08-12 10:25:57');
+INSERT INTO `admin_operation_log` VALUES ('1604', '0', 'admin/auth/login', 'GET', '127.0.0.1', '[]', '2020-08-12 10:25:57', '2020-08-12 10:25:57');
+INSERT INTO `admin_operation_log` VALUES ('1605', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"ixilBMFI2doRdmH9BWid4thECoCe8MQYpo9Gdjsy\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 10:26:15', '2020-08-12 10:26:15');
+INSERT INTO `admin_operation_log` VALUES ('1606', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"ixilBMFI2doRdmH9BWid4thECoCe8MQYpo9Gdjsy\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 10:26:15', '2020-08-12 10:26:15');
+INSERT INTO `admin_operation_log` VALUES ('1607', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"ixilBMFI2doRdmH9BWid4thECoCe8MQYpo9Gdjsy\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 10:26:15', '2020-08-12 10:26:15');
+INSERT INTO `admin_operation_log` VALUES ('1608', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"ixilBMFI2doRdmH9BWid4thECoCe8MQYpo9Gdjsy\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 10:26:15', '2020-08-12 10:26:15');
+INSERT INTO `admin_operation_log` VALUES ('1609', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"ixilBMFI2doRdmH9BWid4thECoCe8MQYpo9Gdjsy\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 10:26:15', '2020-08-12 10:26:15');
+INSERT INTO `admin_operation_log` VALUES ('1610', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"ixilBMFI2doRdmH9BWid4thECoCe8MQYpo9Gdjsy\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 10:26:15', '2020-08-12 10:26:15');
+INSERT INTO `admin_operation_log` VALUES ('1611', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-12 10:26:16', '2020-08-12 10:26:16');
+INSERT INTO `admin_operation_log` VALUES ('1612', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-12 10:26:16', '2020-08-12 10:26:16');
+INSERT INTO `admin_operation_log` VALUES ('1613', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-12 10:26:16', '2020-08-12 10:26:16');
+INSERT INTO `admin_operation_log` VALUES ('1614', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-12 10:26:16', '2020-08-12 10:26:16');
+INSERT INTO `admin_operation_log` VALUES ('1615', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-12 10:26:16', '2020-08-12 10:26:16');
+INSERT INTO `admin_operation_log` VALUES ('1616', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-08-12 10:26:16', '2020-08-12 10:26:16');
+INSERT INTO `admin_operation_log` VALUES ('1617', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 10:26:29', '2020-08-12 10:26:29');
+INSERT INTO `admin_operation_log` VALUES ('1618', '1', 'admin/categories/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:08:56', '2020-08-12 11:08:56');
+INSERT INTO `admin_operation_log` VALUES ('1619', '1', 'admin/categories/create', 'GET', '127.0.0.1', '[]', '2020-08-12 11:10:09', '2020-08-12 11:10:09');
+INSERT INTO `admin_operation_log` VALUES ('1620', '1', 'admin/categories/create', 'GET', '127.0.0.1', '[]', '2020-08-12 11:10:44', '2020-08-12 11:10:44');
+INSERT INTO `admin_operation_log` VALUES ('1621', '1', 'admin/products', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:11:43', '2020-08-12 11:11:43');
+INSERT INTO `admin_operation_log` VALUES ('1622', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:11:48', '2020-08-12 11:11:48');
+INSERT INTO `admin_operation_log` VALUES ('1623', '1', 'admin/categories/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:11:51', '2020-08-12 11:11:51');
+INSERT INTO `admin_operation_log` VALUES ('1624', '1', 'admin/products', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:12:04', '2020-08-12 11:12:04');
+INSERT INTO `admin_operation_log` VALUES ('1625', '1', 'admin/products/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:12:07', '2020-08-12 11:12:07');
+INSERT INTO `admin_operation_log` VALUES ('1626', '1', 'admin/products/create', 'GET', '127.0.0.1', '[]', '2020-08-12 11:12:52', '2020-08-12 11:12:52');
+INSERT INTO `admin_operation_log` VALUES ('1627', '1', 'admin/products/create', 'GET', '127.0.0.1', '[]', '2020-08-12 11:13:28', '2020-08-12 11:13:28');
+INSERT INTO `admin_operation_log` VALUES ('1628', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:17:51', '2020-08-12 11:17:51');
+INSERT INTO `admin_operation_log` VALUES ('1629', '1', 'admin/categories/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:17:55', '2020-08-12 11:17:55');
+INSERT INTO `admin_operation_log` VALUES ('1630', '1', 'admin/categories/1', 'PUT', '127.0.0.1', '{\"_id\":\"2o9BEEB5F51ocRxz\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"upload_column\":\"image\",\"_method\":\"PUT\",\"id\":\"WU_FILE_0\",\"name\":\"\\u624b\\u673a\\u914d\\u4ef6.jpg\",\"type\":\"image\\/jpeg\",\"lastModifiedDate\":\"Wed Aug 12 2020 11:04:07 GMT+0800 (\\u4e2d\\u56fd\\u6807\\u51c6\\u65f6\\u95f4)\",\"size\":\"16273\"}', '2020-08-12 11:18:12', '2020-08-12 11:18:12');
+INSERT INTO `admin_operation_log` VALUES ('1631', '1', 'admin/categories/1', 'PUT', '127.0.0.1', '{\"_id\":\"2o9BEEB5F51ocRxz\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"image\":\"images\\/4c29c2ef4b31101e341e8276e33faaf3.jpg\"}', '2020-08-12 11:18:13', '2020-08-12 11:18:13');
+INSERT INTO `admin_operation_log` VALUES ('1632', '1', 'admin/categories/1', 'PUT', '127.0.0.1', '{\"name\":\"\\u624b\\u673a\\u914d\\u4ef6\",\"image\":\"images\\/4c29c2ef4b31101e341e8276e33faaf3.jpg\",\"file-image\":null,\"_file_\":null,\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/test.xslp.cn:8080\\/admin\\/categories\"}', '2020-08-12 11:18:24', '2020-08-12 11:18:24');
+INSERT INTO `admin_operation_log` VALUES ('1633', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:18:24', '2020-08-12 11:18:24');
+INSERT INTO `admin_operation_log` VALUES ('1634', '1', 'admin/categories/10/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:18:28', '2020-08-12 11:18:28');
+INSERT INTO `admin_operation_log` VALUES ('1635', '1', 'admin/categories/10', 'PUT', '127.0.0.1', '{\"_id\":\"zYMuPCpj4BwjntRD\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"upload_column\":\"image\",\"_method\":\"PUT\",\"id\":\"WU_FILE_1\",\"name\":\"\\u5916\\u8bbe.jpg\",\"type\":\"image\\/jpeg\",\"lastModifiedDate\":\"Wed Aug 12 2020 11:15:21 GMT+0800 (\\u4e2d\\u56fd\\u6807\\u51c6\\u65f6\\u95f4)\",\"size\":\"14038\"}', '2020-08-12 11:18:44', '2020-08-12 11:18:44');
+INSERT INTO `admin_operation_log` VALUES ('1636', '1', 'admin/categories/10', 'PUT', '127.0.0.1', '{\"_id\":\"zYMuPCpj4BwjntRD\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"image\":\"images\\/51d10a21892b58d152a6ba52dce7c9ef.jpg\"}', '2020-08-12 11:18:45', '2020-08-12 11:18:45');
+INSERT INTO `admin_operation_log` VALUES ('1637', '1', 'admin/categories/10', 'PUT', '127.0.0.1', '{\"name\":\"\\u7535\\u8111\\u914d\\u4ef6\",\"image\":\"images\\/51d10a21892b58d152a6ba52dce7c9ef.jpg\",\"file-image\":null,\"_file_\":null,\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/test.xslp.cn:8080\\/admin\\/categories\"}', '2020-08-12 11:18:48', '2020-08-12 11:18:48');
+INSERT INTO `admin_operation_log` VALUES ('1638', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:18:48', '2020-08-12 11:18:48');
+INSERT INTO `admin_operation_log` VALUES ('1639', '1', 'admin/categories/17/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:18:55', '2020-08-12 11:18:55');
+INSERT INTO `admin_operation_log` VALUES ('1640', '1', 'admin/categories/17', 'PUT', '127.0.0.1', '{\"_id\":\"lNGQ8pgc9iF1yyFh\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"upload_column\":\"image\",\"_method\":\"PUT\",\"id\":\"WU_FILE_2\",\"name\":\"\\u7b14\\u8bb0\\u672c.jpg\",\"type\":\"image\\/jpeg\",\"lastModifiedDate\":\"Wed Aug 12 2020 10:55:42 GMT+0800 (\\u4e2d\\u56fd\\u6807\\u51c6\\u65f6\\u95f4)\",\"size\":\"17467\"}', '2020-08-12 11:19:01', '2020-08-12 11:19:01');
+INSERT INTO `admin_operation_log` VALUES ('1641', '1', 'admin/categories/17', 'PUT', '127.0.0.1', '{\"_id\":\"lNGQ8pgc9iF1yyFh\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"image\":\"images\\/3fd6ebf8cbb9ea1bc4ba4e826870b1e9.jpg\"}', '2020-08-12 11:19:02', '2020-08-12 11:19:02');
+INSERT INTO `admin_operation_log` VALUES ('1642', '1', 'admin/categories/17', 'PUT', '127.0.0.1', '{\"name\":\"\\u7535\\u8111\\u6574\\u673a\",\"image\":\"images\\/3fd6ebf8cbb9ea1bc4ba4e826870b1e9.jpg\",\"file-image\":null,\"_file_\":null,\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/test.xslp.cn:8080\\/admin\\/categories\"}', '2020-08-12 11:19:03', '2020-08-12 11:19:03');
+INSERT INTO `admin_operation_log` VALUES ('1643', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:19:03', '2020-08-12 11:19:03');
+INSERT INTO `admin_operation_log` VALUES ('1644', '1', 'admin/categories/24/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:19:11', '2020-08-12 11:19:11');
+INSERT INTO `admin_operation_log` VALUES ('1645', '1', 'admin/categories/24', 'PUT', '127.0.0.1', '{\"_id\":\"MyBHqYpOGUe9WVND\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"upload_column\":\"image\",\"_method\":\"PUT\",\"id\":\"WU_FILE_3\",\"name\":\"\\u624b\\u673a.jpg\",\"type\":\"image\\/jpeg\",\"lastModifiedDate\":\"Wed Aug 12 2020 11:02:58 GMT+0800 (\\u4e2d\\u56fd\\u6807\\u51c6\\u65f6\\u95f4)\",\"size\":\"12385\"}', '2020-08-12 11:19:24', '2020-08-12 11:19:24');
+INSERT INTO `admin_operation_log` VALUES ('1646', '1', 'admin/categories/24', 'PUT', '127.0.0.1', '{\"_id\":\"MyBHqYpOGUe9WVND\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"image\":\"images\\/72054d2bf36cee3ee1d080555c999e4d.jpg\"}', '2020-08-12 11:19:24', '2020-08-12 11:19:24');
+INSERT INTO `admin_operation_log` VALUES ('1647', '1', 'admin/categories/24', 'PUT', '127.0.0.1', '{\"name\":\"\\u624b\\u673a\\u901a\\u8baf\",\"image\":\"images\\/72054d2bf36cee3ee1d080555c999e4d.jpg\",\"file-image\":null,\"_file_\":null,\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/test.xslp.cn:8080\\/admin\\/categories\"}', '2020-08-12 11:19:25', '2020-08-12 11:19:25');
+INSERT INTO `admin_operation_log` VALUES ('1648', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:19:26', '2020-08-12 11:19:26');
+INSERT INTO `admin_operation_log` VALUES ('1649', '1', 'admin/categories/28/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:19:33', '2020-08-12 11:19:33');
+INSERT INTO `admin_operation_log` VALUES ('1650', '1', 'admin/categories/28', 'PUT', '127.0.0.1', '{\"_id\":\"Ut59Gq2eFlCZPFD8\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"upload_column\":\"image\",\"_method\":\"PUT\",\"id\":\"WU_FILE_4\",\"name\":\"\\u5b89\\u9632.jpg\",\"type\":\"image\\/jpeg\",\"lastModifiedDate\":\"Wed Aug 12 2020 10:56:56 GMT+0800 (\\u4e2d\\u56fd\\u6807\\u51c6\\u65f6\\u95f4)\",\"size\":\"17374\"}', '2020-08-12 11:20:09', '2020-08-12 11:20:09');
+INSERT INTO `admin_operation_log` VALUES ('1651', '1', 'admin/categories/28', 'PUT', '127.0.0.1', '{\"_id\":\"Ut59Gq2eFlCZPFD8\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"image\":\"images\\/3c50b5e023e5c09937178ef5ff40b35a.jpg\"}', '2020-08-12 11:20:09', '2020-08-12 11:20:09');
+INSERT INTO `admin_operation_log` VALUES ('1652', '1', 'admin/categories/28', 'PUT', '127.0.0.1', '{\"name\":\"\\u5b89\\u9632\\u8bbe\\u5907\",\"image\":\"images\\/3c50b5e023e5c09937178ef5ff40b35a.jpg\",\"file-image\":null,\"_file_\":null,\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/test.xslp.cn:8080\\/admin\\/categories\"}', '2020-08-12 11:20:11', '2020-08-12 11:20:11');
+INSERT INTO `admin_operation_log` VALUES ('1653', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:20:11', '2020-08-12 11:20:11');
+INSERT INTO `admin_operation_log` VALUES ('1654', '1', 'admin/categories/32/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:20:14', '2020-08-12 11:20:14');
+INSERT INTO `admin_operation_log` VALUES ('1655', '1', 'admin/categories/32', 'PUT', '127.0.0.1', '{\"_id\":\"YNugIvDMMk6lNeb8\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"upload_column\":\"image\",\"_method\":\"PUT\",\"id\":\"WU_FILE_5\",\"name\":\"\\u6559\\u80b2.jpg\",\"type\":\"image\\/jpeg\",\"lastModifiedDate\":\"Wed Aug 12 2020 10:59:38 GMT+0800 (\\u4e2d\\u56fd\\u6807\\u51c6\\u65f6\\u95f4)\",\"size\":\"17575\"}', '2020-08-12 11:20:20', '2020-08-12 11:20:20');
+INSERT INTO `admin_operation_log` VALUES ('1656', '1', 'admin/categories/32', 'PUT', '127.0.0.1', '{\"_id\":\"YNugIvDMMk6lNeb8\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"image\":\"images\\/d91f10bea2efb16d32e8dbe122a35bf8.jpg\"}', '2020-08-12 11:20:20', '2020-08-12 11:20:20');
+INSERT INTO `admin_operation_log` VALUES ('1657', '1', 'admin/categories/32', 'PUT', '127.0.0.1', '{\"name\":\"\\u7535\\u5b50\\u6559\\u80b2\",\"image\":\"images\\/d91f10bea2efb16d32e8dbe122a35bf8.jpg\",\"file-image\":null,\"_file_\":null,\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/test.xslp.cn:8080\\/admin\\/categories\"}', '2020-08-12 11:20:22', '2020-08-12 11:20:22');
+INSERT INTO `admin_operation_log` VALUES ('1658', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:20:22', '2020-08-12 11:20:22');
+INSERT INTO `admin_operation_log` VALUES ('1659', '1', 'admin/categories/34/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:20:30', '2020-08-12 11:20:30');
+INSERT INTO `admin_operation_log` VALUES ('1660', '1', 'admin/categories/34', 'PUT', '127.0.0.1', '{\"_id\":\"WOa7X6tjUPFVFEMI\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"upload_column\":\"image\",\"_method\":\"PUT\",\"id\":\"WU_FILE_6\",\"name\":\"\\u624b\\u8868\\u667a\\u80fd\\u7a7f\\u6234.jpg\",\"type\":\"image\\/jpeg\",\"lastModifiedDate\":\"Wed Aug 12 2020 11:01:23 GMT+0800 (\\u4e2d\\u56fd\\u6807\\u51c6\\u65f6\\u95f4)\",\"size\":\"17845\"}', '2020-08-12 11:20:36', '2020-08-12 11:20:36');
+INSERT INTO `admin_operation_log` VALUES ('1661', '1', 'admin/categories/34', 'PUT', '127.0.0.1', '{\"_id\":\"WOa7X6tjUPFVFEMI\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"image\":\"images\\/ec1c1b7bfa32c671d9c1ebaabd864170.jpg\"}', '2020-08-12 11:20:36', '2020-08-12 11:20:36');
+INSERT INTO `admin_operation_log` VALUES ('1662', '1', 'admin/categories/34', 'PUT', '127.0.0.1', '{\"name\":\"\\u624b\\u8868\",\"image\":\"images\\/ec1c1b7bfa32c671d9c1ebaabd864170.jpg\",\"file-image\":null,\"_file_\":null,\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/test.xslp.cn:8080\\/admin\\/categories\"}', '2020-08-12 11:20:38', '2020-08-12 11:20:38');
+INSERT INTO `admin_operation_log` VALUES ('1663', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:20:38', '2020-08-12 11:20:38');
+INSERT INTO `admin_operation_log` VALUES ('1664', '1', 'admin/categories/36/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:20:41', '2020-08-12 11:20:41');
+INSERT INTO `admin_operation_log` VALUES ('1665', '1', 'admin/categories/36', 'PUT', '127.0.0.1', '{\"_id\":\"E0ipR2ZWiD9016ux\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"upload_column\":\"image\",\"_method\":\"PUT\",\"id\":\"WU_FILE_7\",\"name\":\"\\u76f8\\u673a.jpg\",\"type\":\"image\\/jpeg\",\"lastModifiedDate\":\"Wed Aug 12 2020 11:14:00 GMT+0800 (\\u4e2d\\u56fd\\u6807\\u51c6\\u65f6\\u95f4)\",\"size\":\"13099\"}', '2020-08-12 11:20:46', '2020-08-12 11:20:46');
+INSERT INTO `admin_operation_log` VALUES ('1666', '1', 'admin/categories/36', 'PUT', '127.0.0.1', '{\"_id\":\"E0ipR2ZWiD9016ux\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"image\":\"images\\/af43ab41468dc631c5af35ec039a3238.jpg\"}', '2020-08-12 11:20:47', '2020-08-12 11:20:47');
+INSERT INTO `admin_operation_log` VALUES ('1667', '1', 'admin/categories/36', 'PUT', '127.0.0.1', '{\"name\":\"\\u76f8\\u673a\",\"image\":\"images\\/af43ab41468dc631c5af35ec039a3238.jpg\",\"file-image\":null,\"_file_\":null,\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/test.xslp.cn:8080\\/admin\\/categories\"}', '2020-08-12 11:20:47', '2020-08-12 11:20:47');
+INSERT INTO `admin_operation_log` VALUES ('1668', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:20:48', '2020-08-12 11:20:48');
+INSERT INTO `admin_operation_log` VALUES ('1669', '1', 'admin/categories/38/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:20:52', '2020-08-12 11:20:52');
+INSERT INTO `admin_operation_log` VALUES ('1670', '1', 'admin/categories/38', 'PUT', '127.0.0.1', '{\"_id\":\"c5ypnhTHIDTcFHCm\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"upload_column\":\"image\",\"_method\":\"PUT\",\"id\":\"WU_FILE_8\",\"name\":\"\\u6e38\\u620f\\u673a.jpg\",\"type\":\"image\\/jpeg\",\"lastModifiedDate\":\"Wed Aug 12 2020 11:08:43 GMT+0800 (\\u4e2d\\u56fd\\u6807\\u51c6\\u65f6\\u95f4)\",\"size\":\"17174\"}', '2020-08-12 11:21:00', '2020-08-12 11:21:00');
+INSERT INTO `admin_operation_log` VALUES ('1671', '1', 'admin/categories/38', 'PUT', '127.0.0.1', '{\"_id\":\"c5ypnhTHIDTcFHCm\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"image\":\"images\\/c0085370c926039907a0e4f7dfc21057.jpg\"}', '2020-08-12 11:21:00', '2020-08-12 11:21:00');
+INSERT INTO `admin_operation_log` VALUES ('1672', '1', 'admin/categories/38', 'PUT', '127.0.0.1', '{\"name\":\"\\u6e38\\u620f\\u673a\",\"image\":\"images\\/c0085370c926039907a0e4f7dfc21057.jpg\",\"file-image\":null,\"_file_\":null,\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/test.xslp.cn:8080\\/admin\\/categories\"}', '2020-08-12 11:21:02', '2020-08-12 11:21:02');
+INSERT INTO `admin_operation_log` VALUES ('1673', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:21:02', '2020-08-12 11:21:02');
+INSERT INTO `admin_operation_log` VALUES ('1674', '1', 'admin/categories/40/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:21:05', '2020-08-12 11:21:05');
+INSERT INTO `admin_operation_log` VALUES ('1675', '1', 'admin/categories/40', 'PUT', '127.0.0.1', '{\"_id\":\"a2tNQbRvQLRRulWx\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"upload_column\":\"image\",\"_method\":\"PUT\",\"id\":\"WU_FILE_9\",\"name\":\"\\u5bb6\\u7535.jpg\",\"type\":\"image\\/jpeg\",\"lastModifiedDate\":\"Wed Aug 12 2020 10:58:42 GMT+0800 (\\u4e2d\\u56fd\\u6807\\u51c6\\u65f6\\u95f4)\",\"size\":\"16907\"}', '2020-08-12 11:21:12', '2020-08-12 11:21:12');
+INSERT INTO `admin_operation_log` VALUES ('1676', '1', 'admin/categories/40', 'PUT', '127.0.0.1', '{\"_id\":\"a2tNQbRvQLRRulWx\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"image\":\"images\\/f6e9426c2ced6ccea323ad9eb704602d.jpg\"}', '2020-08-12 11:21:12', '2020-08-12 11:21:12');
+INSERT INTO `admin_operation_log` VALUES ('1677', '1', 'admin/categories/40', 'PUT', '127.0.0.1', '{\"name\":\"\\u7535\\u89c6\",\"image\":\"images\\/f6e9426c2ced6ccea323ad9eb704602d.jpg\",\"file-image\":null,\"_file_\":null,\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/test.xslp.cn:8080\\/admin\\/categories\"}', '2020-08-12 11:21:14', '2020-08-12 11:21:14');
+INSERT INTO `admin_operation_log` VALUES ('1678', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:21:15', '2020-08-12 11:21:15');
+INSERT INTO `admin_operation_log` VALUES ('1679', '1', 'admin/categories/42/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:21:17', '2020-08-12 11:21:17');
+INSERT INTO `admin_operation_log` VALUES ('1680', '1', 'admin/categories/42', 'PUT', '127.0.0.1', '{\"_id\":\"ndD8j9UYS1jrMBDK\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"upload_column\":\"image\",\"_method\":\"PUT\",\"id\":\"WU_FILE_10\",\"name\":\"\\u7a7a\\u8c03.gif\",\"type\":\"image\\/gif\",\"lastModifiedDate\":\"Wed Aug 12 2020 10:59:57 GMT+0800 (\\u4e2d\\u56fd\\u6807\\u51c6\\u65f6\\u95f4)\",\"size\":\"4424\"}', '2020-08-12 11:21:26', '2020-08-12 11:21:26');
+INSERT INTO `admin_operation_log` VALUES ('1681', '1', 'admin/categories/42', 'PUT', '127.0.0.1', '{\"_id\":\"ndD8j9UYS1jrMBDK\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"image\":\"images\\/7a1cb7e268d3fa49ed6defb26a296693.gif\"}', '2020-08-12 11:21:26', '2020-08-12 11:21:26');
+INSERT INTO `admin_operation_log` VALUES ('1682', '1', 'admin/categories/42', 'PUT', '127.0.0.1', '{\"name\":\"\\u7a7a\\u8c03\",\"image\":\"images\\/7a1cb7e268d3fa49ed6defb26a296693.gif\",\"file-image\":null,\"_file_\":null,\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/test.xslp.cn:8080\\/admin\\/categories\"}', '2020-08-12 11:21:27', '2020-08-12 11:21:27');
+INSERT INTO `admin_operation_log` VALUES ('1683', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:21:27', '2020-08-12 11:21:27');
+INSERT INTO `admin_operation_log` VALUES ('1684', '1', 'admin/categories/45/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:21:31', '2020-08-12 11:21:31');
+INSERT INTO `admin_operation_log` VALUES ('1685', '1', 'admin/categories/45', 'PUT', '127.0.0.1', '{\"_id\":\"RFcdLdlpax1woUJu\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"upload_column\":\"image\",\"_method\":\"PUT\",\"id\":\"WU_FILE_11\",\"name\":\"\\u65e0\\u4eba\\u673a.jpg\",\"type\":\"image\\/jpeg\",\"lastModifiedDate\":\"Wed Aug 12 2020 11:17:41 GMT+0800 (\\u4e2d\\u56fd\\u6807\\u51c6\\u65f6\\u95f4)\",\"size\":\"13173\"}', '2020-08-12 11:21:39', '2020-08-12 11:21:39');
+INSERT INTO `admin_operation_log` VALUES ('1686', '1', 'admin/categories/45', 'PUT', '127.0.0.1', '{\"_id\":\"RFcdLdlpax1woUJu\",\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"image\":\"images\\/c3f4348272a8453f14c8048b867ef0e8.jpg\"}', '2020-08-12 11:21:39', '2020-08-12 11:21:39');
+INSERT INTO `admin_operation_log` VALUES ('1687', '1', 'admin/categories/45', 'PUT', '127.0.0.1', '{\"name\":\"\\u673a\\u5668\\u4eba\",\"image\":\"images\\/c3f4348272a8453f14c8048b867ef0e8.jpg\",\"file-image\":null,\"_file_\":null,\"_token\":\"NDFrkfNdjUkGoRAXP8P85LeeGFKyHiTCmnz88EgO\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/test.xslp.cn:8080\\/admin\\/categories\"}', '2020-08-12 11:21:40', '2020-08-12 11:21:40');
+INSERT INTO `admin_operation_log` VALUES ('1688', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 11:21:41', '2020-08-12 11:21:41');
+INSERT INTO `admin_operation_log` VALUES ('1689', '1', 'admin/categories/28/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 13:15:43', '2020-08-12 13:15:43');
+INSERT INTO `admin_operation_log` VALUES ('1690', '1', 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 13:15:53', '2020-08-12 13:15:53');
+INSERT INTO `admin_operation_log` VALUES ('1691', '0', 'admin/auth/login', 'GET', '127.0.0.1', '[]', '2020-08-12 17:33:53', '2020-08-12 17:33:53');
+INSERT INTO `admin_operation_log` VALUES ('1692', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"THhT80ninYQGAC30qrEa56ndUL9mM3yQ6dVdaCuD\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 17:34:08', '2020-08-12 17:34:08');
+INSERT INTO `admin_operation_log` VALUES ('1693', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"THhT80ninYQGAC30qrEa56ndUL9mM3yQ6dVdaCuD\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 17:34:08', '2020-08-12 17:34:08');
+INSERT INTO `admin_operation_log` VALUES ('1694', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"THhT80ninYQGAC30qrEa56ndUL9mM3yQ6dVdaCuD\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 17:34:08', '2020-08-12 17:34:08');
+INSERT INTO `admin_operation_log` VALUES ('1695', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"THhT80ninYQGAC30qrEa56ndUL9mM3yQ6dVdaCuD\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 17:34:08', '2020-08-12 17:34:08');
+INSERT INTO `admin_operation_log` VALUES ('1696', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"THhT80ninYQGAC30qrEa56ndUL9mM3yQ6dVdaCuD\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 17:34:08', '2020-08-12 17:34:08');
+INSERT INTO `admin_operation_log` VALUES ('1697', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"THhT80ninYQGAC30qrEa56ndUL9mM3yQ6dVdaCuD\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-08-12 17:34:09', '2020-08-12 17:34:09');
+INSERT INTO `admin_operation_log` VALUES ('1698', '1', 'admin/products', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-08-12 17:34:19', '2020-08-12 17:34:19');
+INSERT INTO `admin_operation_log` VALUES ('1699', '1', 'admin/products', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"page\":\"2\"}', '2020-08-12 17:34:25', '2020-08-12 17:34:25');
+INSERT INTO `admin_operation_log` VALUES ('1700', '1', 'admin/products', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"page\":\"3\"}', '2020-08-12 17:34:41', '2020-08-12 17:34:41');
 
 -- ----------------------------
 -- Table structure for `admin_permissions`
@@ -1817,7 +1961,7 @@ INSERT INTO `ads` VALUES ('5', 'middle1', 'ads/88c55960b02b371d12913198346285f4.
 INSERT INTO `ads` VALUES ('6', 'middle2', 'ads/69ca6f52b4d002154532861c21c28db0.jpg', '/', '350', '160', null, '2020-06-23 17:15:58', '2020-06-23 17:15:58');
 INSERT INTO `ads` VALUES ('7', 'middle3', 'ads/c53d73169db15d1ac0301ee6eb74cbd8.jpg', '/', '350', '160', null, '2020-06-23 17:16:15', '2020-06-23 17:16:15');
 INSERT INTO `ads` VALUES ('8', 'banner1', 'ads/08525b6fdd40a70bb342453432cfb8b8.jpg', '/', '1110', '170', null, '2020-06-23 17:17:17', '2020-06-23 17:17:17');
-INSERT INTO `ads` VALUES ('9', 'bannerl', 'ads/09aadfae69c36a7379b24fe6f6ff5a1e.jpg', '/', '840', '170', null, '2020-06-23 17:18:25', '2020-06-23 17:18:25');
+INSERT INTO `ads` VALUES ('9', 'bannerl', 'ads/09aadfae69c36a7379b24fe6f6ff5a1e.jpg', '/', '840', '171', null, '2020-06-23 17:18:25', '2020-08-11 15:23:42');
 INSERT INTO `ads` VALUES ('10', 'bannerl2', 'ads/3aebc9fd377388fbef9d36cfd623d472.jpg', '/', '840', '170', null, '2020-06-23 17:18:54', '2020-06-23 17:18:54');
 INSERT INTO `ads` VALUES ('11', 'left3', 'ads/500f1a173dd95c1ecf72b994784ca696.jpg', '/', '270', '345', null, '2020-06-23 17:19:59', '2020-06-23 17:19:59');
 INSERT INTO `ads` VALUES ('12', 'bottomb', 'ads/620c55051c0aa16b014620eb700e6de9.jpg', '/', '1110', '430', null, '2020-06-23 17:21:01', '2020-06-23 17:21:01');
@@ -1877,6 +2021,7 @@ CREATE TABLE `categories` (
   `is_directory` tinyint(1) NOT NULL,
   `level` int(10) unsigned NOT NULL,
   `path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -1886,56 +2031,56 @@ CREATE TABLE `categories` (
 -- ----------------------------
 -- Records of categories
 -- ----------------------------
-INSERT INTO `categories` VALUES ('1', '手机配件', '0', '1', '0', '-', '2020-06-22 15:03:34', '2020-06-22 15:03:34');
-INSERT INTO `categories` VALUES ('2', '手机壳', '1', '0', '1', '-1-', '2020-06-22 15:03:34', '2020-06-22 15:03:34');
-INSERT INTO `categories` VALUES ('3', '贴膜', '1', '0', '1', '-1-', '2020-06-22 15:03:34', '2020-06-22 15:03:34');
-INSERT INTO `categories` VALUES ('4', '存储卡', '1', '0', '1', '-1-', '2020-06-22 15:03:34', '2020-06-22 15:03:34');
-INSERT INTO `categories` VALUES ('5', '数据线', '1', '0', '1', '-1-', '2020-06-22 15:03:34', '2020-06-22 15:03:34');
-INSERT INTO `categories` VALUES ('6', '充电器', '1', '0', '1', '-1-', '2020-06-22 15:03:34', '2020-06-22 15:03:34');
-INSERT INTO `categories` VALUES ('7', '耳机', '1', '1', '1', '-1-', '2020-06-22 15:03:34', '2020-06-22 15:03:34');
-INSERT INTO `categories` VALUES ('8', '有线耳机', '7', '0', '2', '-1-7-', '2020-06-22 15:03:34', '2020-06-22 15:03:34');
-INSERT INTO `categories` VALUES ('9', '蓝牙耳机', '7', '0', '2', '-1-7-', '2020-06-22 15:03:34', '2020-06-22 15:03:34');
-INSERT INTO `categories` VALUES ('10', '电脑配件', '0', '1', '0', '-', '2020-06-22 15:03:34', '2020-06-22 15:03:34');
-INSERT INTO `categories` VALUES ('11', '显示器', '10', '0', '1', '-10-', '2020-06-22 15:03:34', '2020-06-22 15:03:34');
-INSERT INTO `categories` VALUES ('12', '显卡', '10', '0', '1', '-10-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('13', '内存', '10', '0', '1', '-10-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('14', 'CPU', '10', '0', '1', '-10-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('15', '主板', '10', '0', '1', '-10-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('16', '硬盘', '10', '0', '1', '-10-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('17', '电脑整机', '0', '1', '0', '-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('18', '笔记本', '17', '0', '1', '-17-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('19', '台式机', '17', '0', '1', '-17-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('20', '平板电脑', '17', '0', '1', '-17-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('21', '一体机', '17', '0', '1', '-17-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('22', '服务器', '17', '0', '1', '-17-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('23', '工作站', '17', '0', '1', '-17-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('24', '手机通讯', '0', '1', '0', '-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('25', '智能机', '24', '0', '1', '-24-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('26', '老人机', '24', '0', '1', '-24-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('27', '对讲机', '24', '0', '1', '-24-', '2020-06-22 15:03:35', '2020-06-22 15:03:35');
-INSERT INTO `categories` VALUES ('28', '安防设备', '0', '1', '0', '-', '2020-06-22 16:03:25', '2020-06-22 16:03:25');
-INSERT INTO `categories` VALUES ('29', '摄像头', '28', '0', '1', '-28-', '2020-06-22 16:04:10', '2020-06-22 16:04:10');
-INSERT INTO `categories` VALUES ('30', '监控器', '28', '0', '1', '-28-', '2020-06-22 16:05:03', '2020-06-22 16:05:14');
-INSERT INTO `categories` VALUES ('32', '电子教育', '0', '1', '0', '-', '2020-06-24 15:28:57', '2020-06-24 17:14:05');
-INSERT INTO `categories` VALUES ('33', '复读机', '32', '0', '1', '-32-', '2020-06-24 15:29:33', '2020-06-24 17:14:25');
-INSERT INTO `categories` VALUES ('34', '手表', '0', '1', '0', '-', '2020-06-24 15:30:20', '2020-06-24 15:30:20');
-INSERT INTO `categories` VALUES ('35', '苹果手表', '34', '0', '1', '-34-', '2020-06-24 15:30:37', '2020-06-24 15:30:37');
-INSERT INTO `categories` VALUES ('36', '相机', '0', '1', '0', '-', '2020-06-24 15:32:07', '2020-06-24 15:32:07');
-INSERT INTO `categories` VALUES ('37', '佳能', '36', '0', '1', '-36-', '2020-06-24 15:32:21', '2020-06-24 15:32:21');
-INSERT INTO `categories` VALUES ('38', '游戏机', '0', '1', '0', '-', '2020-06-24 16:06:15', '2020-06-24 16:06:15');
-INSERT INTO `categories` VALUES ('39', '索尼', '38', '0', '1', '-38-', '2020-06-24 16:06:30', '2020-06-24 16:06:30');
-INSERT INTO `categories` VALUES ('40', '电视', '0', '1', '0', '-', '2020-06-25 11:01:34', '2020-06-25 11:01:34');
-INSERT INTO `categories` VALUES ('41', '液晶电视', '40', '0', '1', '-40-', '2020-06-25 11:02:05', '2020-06-25 11:02:05');
-INSERT INTO `categories` VALUES ('42', '空调', '0', '1', '0', '-', '2020-06-25 11:07:45', '2020-06-25 11:07:45');
-INSERT INTO `categories` VALUES ('43', '格力空调', '42', '0', '1', '-42-', '2020-06-25 11:08:02', '2020-06-25 11:08:02');
-INSERT INTO `categories` VALUES ('44', '三星Watch', '34', '0', '1', '-34-', '2020-06-25 11:14:29', '2020-06-25 11:14:29');
-INSERT INTO `categories` VALUES ('45', '机器人', '0', '1', '0', '-', '2020-06-25 11:17:05', '2020-06-25 11:17:05');
-INSERT INTO `categories` VALUES ('46', '扫地机器人', '45', '0', '1', '-45-', '2020-06-25 11:17:21', '2020-06-25 11:17:21');
-INSERT INTO `categories` VALUES ('47', '小米手表', '34', '0', '1', '-34-', '2020-06-25 12:30:10', '2020-06-25 12:30:10');
-INSERT INTO `categories` VALUES ('48', '华为手表', '34', '0', '1', '-34-', '2020-06-25 12:34:56', '2020-06-25 12:34:56');
-INSERT INTO `categories` VALUES ('49', '佳明手表', '34', '0', '1', '-34-', '2020-06-25 12:43:38', '2020-06-25 12:43:38');
-INSERT INTO `categories` VALUES ('50', '鼠标', '10', '0', '1', '-10-', '2020-06-25 17:55:11', '2020-06-25 17:55:11');
-INSERT INTO `categories` VALUES ('55', '海尔空调', '42', '0', '1', '-42-', '2020-08-04 15:03:38', '2020-08-04 15:03:58');
+INSERT INTO `categories` VALUES ('1', '手机配件', '0', '1', '0', '-', 'images/4c29c2ef4b31101e341e8276e33faaf3.jpg', '2020-06-22 15:03:34', '2020-08-12 11:18:13');
+INSERT INTO `categories` VALUES ('2', '手机壳', '1', '0', '1', '-1-', null, '2020-06-22 15:03:34', '2020-06-22 15:03:34');
+INSERT INTO `categories` VALUES ('3', '贴膜', '1', '0', '1', '-1-', null, '2020-06-22 15:03:34', '2020-06-22 15:03:34');
+INSERT INTO `categories` VALUES ('4', '存储卡', '1', '0', '1', '-1-', null, '2020-06-22 15:03:34', '2020-06-22 15:03:34');
+INSERT INTO `categories` VALUES ('5', '数据线', '1', '0', '1', '-1-', null, '2020-06-22 15:03:34', '2020-06-22 15:03:34');
+INSERT INTO `categories` VALUES ('6', '充电器', '1', '0', '1', '-1-', null, '2020-06-22 15:03:34', '2020-06-22 15:03:34');
+INSERT INTO `categories` VALUES ('7', '耳机', '1', '1', '1', '-1-', null, '2020-06-22 15:03:34', '2020-06-22 15:03:34');
+INSERT INTO `categories` VALUES ('8', '有线耳机', '7', '0', '2', '-1-7-', null, '2020-06-22 15:03:34', '2020-06-22 15:03:34');
+INSERT INTO `categories` VALUES ('9', '蓝牙耳机', '7', '0', '2', '-1-7-', null, '2020-06-22 15:03:34', '2020-06-22 15:03:34');
+INSERT INTO `categories` VALUES ('10', '电脑配件', '0', '1', '0', '-', 'images/51d10a21892b58d152a6ba52dce7c9ef.jpg', '2020-06-22 15:03:34', '2020-08-12 11:18:45');
+INSERT INTO `categories` VALUES ('11', '显示器', '10', '0', '1', '-10-', null, '2020-06-22 15:03:34', '2020-06-22 15:03:34');
+INSERT INTO `categories` VALUES ('12', '显卡', '10', '0', '1', '-10-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('13', '内存', '10', '0', '1', '-10-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('14', 'CPU', '10', '0', '1', '-10-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('15', '主板', '10', '0', '1', '-10-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('16', '硬盘', '10', '0', '1', '-10-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('17', '电脑整机', '0', '1', '0', '-', 'images/3fd6ebf8cbb9ea1bc4ba4e826870b1e9.jpg', '2020-06-22 15:03:35', '2020-08-12 11:19:02');
+INSERT INTO `categories` VALUES ('18', '笔记本', '17', '0', '1', '-17-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('19', '台式机', '17', '0', '1', '-17-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('20', '平板电脑', '17', '0', '1', '-17-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('21', '一体机', '17', '0', '1', '-17-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('22', '服务器', '17', '0', '1', '-17-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('23', '工作站', '17', '0', '1', '-17-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('24', '手机通讯', '0', '1', '0', '-', 'images/72054d2bf36cee3ee1d080555c999e4d.jpg', '2020-06-22 15:03:35', '2020-08-12 11:19:24');
+INSERT INTO `categories` VALUES ('25', '智能机', '24', '0', '1', '-24-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('26', '老人机', '24', '0', '1', '-24-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('27', '对讲机', '24', '0', '1', '-24-', null, '2020-06-22 15:03:35', '2020-06-22 15:03:35');
+INSERT INTO `categories` VALUES ('28', '安防设备', '0', '1', '0', '-', 'images/3c50b5e023e5c09937178ef5ff40b35a.jpg', '2020-06-22 16:03:25', '2020-08-12 11:20:09');
+INSERT INTO `categories` VALUES ('29', '摄像头', '28', '0', '1', '-28-', null, '2020-06-22 16:04:10', '2020-06-22 16:04:10');
+INSERT INTO `categories` VALUES ('30', '监控器', '28', '0', '1', '-28-', null, '2020-06-22 16:05:03', '2020-06-22 16:05:14');
+INSERT INTO `categories` VALUES ('32', '电子教育', '0', '1', '0', '-', 'images/d91f10bea2efb16d32e8dbe122a35bf8.jpg', '2020-06-24 15:28:57', '2020-08-12 11:20:20');
+INSERT INTO `categories` VALUES ('33', '复读机', '32', '0', '1', '-32-', null, '2020-06-24 15:29:33', '2020-06-24 17:14:25');
+INSERT INTO `categories` VALUES ('34', '手表', '0', '1', '0', '-', 'images/ec1c1b7bfa32c671d9c1ebaabd864170.jpg', '2020-06-24 15:30:20', '2020-08-12 11:20:36');
+INSERT INTO `categories` VALUES ('35', '苹果手表', '34', '0', '1', '-34-', null, '2020-06-24 15:30:37', '2020-06-24 15:30:37');
+INSERT INTO `categories` VALUES ('36', '相机', '0', '1', '0', '-', 'images/af43ab41468dc631c5af35ec039a3238.jpg', '2020-06-24 15:32:07', '2020-08-12 11:20:47');
+INSERT INTO `categories` VALUES ('37', '佳能', '36', '0', '1', '-36-', null, '2020-06-24 15:32:21', '2020-06-24 15:32:21');
+INSERT INTO `categories` VALUES ('38', '游戏机', '0', '1', '0', '-', 'images/c0085370c926039907a0e4f7dfc21057.jpg', '2020-06-24 16:06:15', '2020-08-12 11:21:00');
+INSERT INTO `categories` VALUES ('39', '索尼', '38', '0', '1', '-38-', null, '2020-06-24 16:06:30', '2020-06-24 16:06:30');
+INSERT INTO `categories` VALUES ('40', '电视', '0', '1', '0', '-', 'images/f6e9426c2ced6ccea323ad9eb704602d.jpg', '2020-06-25 11:01:34', '2020-08-12 11:21:13');
+INSERT INTO `categories` VALUES ('41', '液晶电视', '40', '0', '1', '-40-', null, '2020-06-25 11:02:05', '2020-06-25 11:02:05');
+INSERT INTO `categories` VALUES ('42', '空调', '0', '1', '0', '-', 'images/7a1cb7e268d3fa49ed6defb26a296693.gif', '2020-06-25 11:07:45', '2020-08-12 11:21:26');
+INSERT INTO `categories` VALUES ('43', '格力空调', '42', '0', '1', '-42-', null, '2020-06-25 11:08:02', '2020-06-25 11:08:02');
+INSERT INTO `categories` VALUES ('44', '三星Watch', '34', '0', '1', '-34-', null, '2020-06-25 11:14:29', '2020-06-25 11:14:29');
+INSERT INTO `categories` VALUES ('45', '机器人', '0', '1', '0', '-', 'images/c3f4348272a8453f14c8048b867ef0e8.jpg', '2020-06-25 11:17:05', '2020-08-12 11:21:39');
+INSERT INTO `categories` VALUES ('46', '扫地机器人', '45', '0', '1', '-45-', null, '2020-06-25 11:17:21', '2020-06-25 11:17:21');
+INSERT INTO `categories` VALUES ('47', '小米手表', '34', '0', '1', '-34-', null, '2020-06-25 12:30:10', '2020-06-25 12:30:10');
+INSERT INTO `categories` VALUES ('48', '华为手表', '34', '0', '1', '-34-', null, '2020-06-25 12:34:56', '2020-06-25 12:34:56');
+INSERT INTO `categories` VALUES ('49', '佳明手表', '34', '0', '1', '-34-', null, '2020-06-25 12:43:38', '2020-06-25 12:43:38');
+INSERT INTO `categories` VALUES ('50', '鼠标', '10', '0', '1', '-10-', null, '2020-06-25 17:55:11', '2020-06-25 17:55:11');
+INSERT INTO `categories` VALUES ('55', '海尔空调', '42', '0', '1', '-42-', null, '2020-08-04 15:03:38', '2020-08-04 15:03:58');
 
 -- ----------------------------
 -- Table structure for `coupon_codes`
@@ -1962,18 +2107,18 @@ CREATE TABLE `coupon_codes` (
 -- ----------------------------
 -- Records of coupon_codes
 -- ----------------------------
-INSERT INTO `coupon_codes` VALUES ('1', 'qui enim incidunt', 'QJS331WEO5EG5QCP', '77.00', 'fixed', '77.01', '100', '0', null, null, '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
-INSERT INTO `coupon_codes` VALUES ('2', 'eaque corporis delectus', '5CONO1LAROMY6ZYD', '18.00', 'percent', '364.00', '100', '0', null, null, '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
-INSERT INTO `coupon_codes` VALUES ('3', 'nemo consequatur magnam', 'PSEXMTSBWGHRY7ZB', '37.00', 'percent', '851.00', '100', '0', null, null, '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
-INSERT INTO `coupon_codes` VALUES ('4', 'quo quo necessitatibus', 'VZROME6KLSL6G2FG', '49.00', 'percent', '0.00', '100', '0', null, null, '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
-INSERT INTO `coupon_codes` VALUES ('5', 'quis ut ut', 'J7BPV8AIURDWAO8Q', '15.00', 'percent', '0.00', '100', '0', null, null, '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
-INSERT INTO `coupon_codes` VALUES ('6', 'at quia enim', 'OESBNL3IHPDSNS8F', '26.00', 'percent', '0.00', '100', '0', null, null, '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
-INSERT INTO `coupon_codes` VALUES ('7', 'ut molestiae in', 'R6ITREMSUNM7CVRQ', '50.00', 'fixed', '50.01', '100', '0', null, null, '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
-INSERT INTO `coupon_codes` VALUES ('8', 'aut quos dignissimos', 'HFQDLOLSMGUE495C', '15.00', 'percent', '515.00', '100', '0', null, null, '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
-INSERT INTO `coupon_codes` VALUES ('9', 'magnam illum voluptatum', '0L0IEB6PVQD0QKQU', '20.00', 'percent', '891.00', '100', '0', null, null, '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
-INSERT INTO `coupon_codes` VALUES ('10', 'numquam illum odit', 'WFPYCYZRUGDICOZO', '90.00', 'fixed', '90.01', '100', '0', null, null, '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
-INSERT INTO `coupon_codes` VALUES ('11', 'guoguo', 'LSBXY7RZCRMCFFJ6', '20.00', 'fixed', '500.00', '1000', '0', '2019-12-09 05:47:26', '2019-12-09 05:47:26', '1', '2019-12-09 05:47:47', '2019-12-09 05:47:47');
-INSERT INTO `coupon_codes` VALUES ('14', 'guo', 'JNKID6S0EAIOKIRA', '20.00', 'fixed', '500.00', '1000', '0', '2019-12-09 06:06:49', '2019-12-20 06:06:49', '1', '2019-12-09 06:07:10', '2019-12-09 06:07:10');
+INSERT INTO `coupon_codes` VALUES ('1', 'qui enim incidunt', 'QJS331WEO5EG5QCP', '77.00', 'fixed', '77.01', '100', '0', '2020-08-10 06:06:49', '2020-11-29 06:06:49', '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
+INSERT INTO `coupon_codes` VALUES ('2', 'eaque corporis delectus', '5CONO1LAROMY6ZYD', '18.00', 'percent', '364.00', '100', '0', '2020-08-10 06:06:49', '2020-11-29 06:06:49', '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
+INSERT INTO `coupon_codes` VALUES ('3', 'nemo consequatur magnam', 'PSEXMTSBWGHRY7ZB', '37.00', 'percent', '851.00', '100', '0', '2020-08-10 06:06:49', '2020-11-29 06:06:49', '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
+INSERT INTO `coupon_codes` VALUES ('4', 'quo quo necessitatibus', 'VZROME6KLSL6G2FG', '49.00', 'percent', '0.00', '100', '0', '2020-08-10 06:06:49', '2020-11-29 06:06:49', '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
+INSERT INTO `coupon_codes` VALUES ('5', 'quis ut ut', 'J7BPV8AIURDWAO8Q', '15.00', 'percent', '0.00', '100', '0', '2020-08-10 06:06:49', '2020-11-29 06:06:49', '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
+INSERT INTO `coupon_codes` VALUES ('6', 'at quia enim', 'OESBNL3IHPDSNS8F', '26.00', 'percent', '0.00', '100', '0', '2020-08-10 06:06:49', '2020-11-29 06:06:49', '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
+INSERT INTO `coupon_codes` VALUES ('7', 'ut molestiae in', 'R6ITREMSUNM7CVRQ', '50.00', 'fixed', '50.01', '100', '0', '2020-08-10 06:06:49', '2020-11-29 06:06:49', '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
+INSERT INTO `coupon_codes` VALUES ('8', 'aut quos dignissimos', 'HFQDLOLSMGUE495C', '15.00', 'percent', '515.00', '100', '0', '2020-08-10 06:06:49', '2020-11-29 06:06:49', '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
+INSERT INTO `coupon_codes` VALUES ('9', 'magnam illum voluptatum', '0L0IEB6PVQD0QKQU', '20.00', 'percent', '891.00', '100', '0', '2020-08-10 06:06:49', '2020-11-29 06:06:49', '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
+INSERT INTO `coupon_codes` VALUES ('10', 'numquam illum odit', 'WFPYCYZRUGDICOZO', '90.00', 'fixed', '90.01', '100', '0', '2020-08-10 06:06:49', '2020-11-29 06:06:49', '1', '2019-12-09 02:34:24', '2019-12-09 02:34:24');
+INSERT INTO `coupon_codes` VALUES ('11', 'guoguo', 'LSBXY7RZCRMCFFJ6', '20.00', 'fixed', '500.00', '1000', '0', '2019-12-09 05:47:26', '2020-11-29 06:06:49', '1', '2019-12-09 05:47:47', '2019-12-09 05:47:47');
+INSERT INTO `coupon_codes` VALUES ('14', 'guo', 'JNKID6S0EAIOKIRA', '20.00', 'fixed', '500.00', '1000', '0', '2019-12-09 06:06:49', '2020-11-29 06:06:49', '1', '2019-12-09 06:07:10', '2019-12-09 06:07:10');
 
 -- ----------------------------
 -- Table structure for `crowdfunding_products`
@@ -2053,7 +2198,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of migrations
@@ -2090,6 +2235,7 @@ INSERT INTO `migrations` VALUES ('29', '2020_07_16_163838_add_username_phone_to_
 INSERT INTO `migrations` VALUES ('30', '2020_07_20_110859_add_weixin_openid_to_users_table', '15');
 INSERT INTO `migrations` VALUES ('31', '2020_07_20_132346_add_avatar_to_users_table', '15');
 INSERT INTO `migrations` VALUES ('32', '2020_07_20_170904_create_images_table', '15');
+INSERT INTO `migrations` VALUES ('33', '2020_08_12_100214_add_image_to_category', '16');
 
 -- ----------------------------
 -- Table structure for `orders`
@@ -2347,7 +2493,7 @@ CREATE TABLE `product_pics` (
   PRIMARY KEY (`id`),
   KEY `product_pics_product_id_foreign` (`product_id`),
   CONSTRAINT `product_pics_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=273 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=270 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of product_pics
@@ -2874,19 +3020,19 @@ CREATE TABLE `seckill_products` (
 -- ----------------------------
 -- Records of seckill_products
 -- ----------------------------
-INSERT INTO `seckill_products` VALUES ('1', '64', '2020-07-12 12:00:00', '2020-07-28 12:00:00');
-INSERT INTO `seckill_products` VALUES ('2', '72', '2020-07-12 12:00:00', '2020-07-28 12:00:00');
-INSERT INTO `seckill_products` VALUES ('3', '99', '2020-07-16 14:15:13', '2020-07-28 12:00:00');
-INSERT INTO `seckill_products` VALUES ('4', '100', '2020-07-12 12:00:00', '2020-07-28 12:00:00');
-INSERT INTO `seckill_products` VALUES ('5', '101', '2020-07-12 12:00:00', '2020-07-28 12:00:00');
-INSERT INTO `seckill_products` VALUES ('6', '102', '2020-07-12 12:00:00', '2020-07-28 12:00:00');
-INSERT INTO `seckill_products` VALUES ('7', '103', '2020-07-12 12:00:00', '2020-07-28 12:00:00');
-INSERT INTO `seckill_products` VALUES ('8', '104', '2020-07-12 12:00:00', '2020-07-28 12:00:00');
-INSERT INTO `seckill_products` VALUES ('9', '105', '2020-07-12 12:00:00', '2020-07-28 12:00:00');
-INSERT INTO `seckill_products` VALUES ('10', '106', '2020-07-12 12:00:00', '2020-07-28 12:00:00');
-INSERT INTO `seckill_products` VALUES ('11', '107', '2020-07-12 12:00:00', '2020-07-28 12:00:00');
+INSERT INTO `seckill_products` VALUES ('1', '64', '2020-07-12 12:00:00', '2020-08-31 12:00:00');
+INSERT INTO `seckill_products` VALUES ('2', '72', '2020-07-12 12:00:00', '2020-10-09 00:00:00');
+INSERT INTO `seckill_products` VALUES ('3', '99', '2020-07-16 14:15:13', '2020-10-09 00:00:00');
+INSERT INTO `seckill_products` VALUES ('4', '100', '2020-07-12 12:00:00', '2020-10-09 00:00:00');
+INSERT INTO `seckill_products` VALUES ('5', '101', '2020-07-12 12:00:00', '2020-08-31 12:00:00');
+INSERT INTO `seckill_products` VALUES ('6', '102', '2020-07-12 12:00:00', '2020-08-31 12:00:00');
+INSERT INTO `seckill_products` VALUES ('7', '103', '2020-07-12 12:00:00', '2020-08-31 12:00:00');
+INSERT INTO `seckill_products` VALUES ('8', '104', '2020-07-12 12:00:00', '2020-08-31 12:00:00');
+INSERT INTO `seckill_products` VALUES ('9', '105', '2020-07-12 12:00:00', '2020-08-31 12:00:00');
+INSERT INTO `seckill_products` VALUES ('10', '106', '2020-07-12 12:00:00', '2020-08-31 12:00:00');
+INSERT INTO `seckill_products` VALUES ('11', '107', '2020-07-12 12:00:00', '2020-08-31 12:00:00');
 INSERT INTO `seckill_products` VALUES ('14', '118', '2020-08-10 11:04:34', '2020-08-31 11:04:39');
-INSERT INTO `seckill_products` VALUES ('15', '121', '2020-08-08 13:54:18', '2020-08-18 00:00:00');
+INSERT INTO `seckill_products` VALUES ('15', '121', '2020-08-08 13:54:18', '2020-08-31 12:00:00');
 
 -- ----------------------------
 -- Table structure for `shops`
