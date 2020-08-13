@@ -53,7 +53,7 @@ class ProductsController extends CommonProductsController
             //$actions->append(CrowdfundingTransProduct::make(Product::TYPE_CROWDFUNDING));
             $actions->append(new TranslateProduct(Product::TYPE_CROWDFUNDING));
             $actions->append(new TranslateProduct(Product::TYPE_SECKILL));
-            $actions->append(new TranslateProduct(Product::TYPE_DISCOUNT));
+            //$actions->append(new TranslateProduct(Product::TYPE_DISCOUNT));
            // $actions->prepend('<a href="discount_products/'.$actions->getKey().'/edit">折扣商品</a>');
             $actions->append(new UploadPic(0,'test'));
         });
