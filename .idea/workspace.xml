@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1c5d5903-1bd0-4b06-9571-d7baeccec364" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Controllers/CommonProductsController.php" afterPath="$PROJECT_DIR$/app/Admin/Controllers/CommonProductsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Controllers/ProductsController.php" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ProductsController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,10 +13,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProductsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/ProductsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="286">
               <caret line="49" column="33" lean-forward="false" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
               <folding />
             </state>
@@ -55,13 +54,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommonProductsController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CommonProductsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/CommonProductsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-468">
-              <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+            <state relative-caret-position="258">
+              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
-                <element signature="e#1813#5003#0#PHP" expanded="false" />
+                <element signature="e#1811#5001#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -161,8 +160,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2020_07_20_132346_add_avatar_to_users_table.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/app/Admin/Controllers/CommonProductsController.php" />
         <option value="$PROJECT_DIR$/app/Admin/Controllers/ProductsController.php" />
+        <option value="$PROJECT_DIR$/app/Admin/Controllers/CommonProductsController.php" />
       </list>
     </option>
   </component>
@@ -319,12 +318,12 @@
       <workItem from="1597022185422" duration="19435000" />
       <workItem from="1597108046338" duration="20927000" />
       <workItem from="1597194913792" duration="22687000" />
-      <workItem from="1597280313197" duration="10485000" />
+      <workItem from="1597280313197" duration="10783000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199965000" />
+    <option name="totallyTimeSpent" value="200263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -760,21 +759,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/CommonProductsController.php">
+    <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/ProductsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-468">
-          <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding>
-            <element signature="e#1813#5003#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="286">
+          <caret line="49" column="33" lean-forward="false" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/ProductsController.php">
+    <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/CommonProductsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="49" column="33" lean-forward="false" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="258">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#1811#5001#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
