@@ -32,10 +32,12 @@ abstract  class CommonProductsController extends  AdminController
         $grid = new Grid(new Product());
         $grid->model()->where('type',$this->getProductType())->orderBy('id', 'desc');;
 
+        /*
         $grid->actions(function ($action){
             //$action->disableView();
             //$action->disableDelete();
         });
+        */
         $grid->tools(function ($tool){
             $tool->batch(function ($batch){
                 $batch->disableDelete();
