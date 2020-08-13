@@ -15,9 +15,7 @@ _ide_helper.php
 _ide_helper_models.php
 .phpstorm.meta.php
 /public/mix-manifest.json
-/public/js/app.js
-/public/css/app.css
-/public/css/style.css
+
 .gitignore
 .idea/workspace.xml
 composer.json
