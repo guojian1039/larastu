@@ -93,12 +93,18 @@
                                             <button  id="sec{{ $seckill->product->skus[0]->id }}" class="btn-danger {{ $seckill->start_at<=\Carbon\Carbon::now() && $seckill->end_at>\Carbon\Carbon::now()?'btn-cart':'' }}">
                                                 <!--<i class="lnr lnr-cart"></i>-->
                                                 <span>
-                                                    @if($seckill->start_at<\Carbon\Carbon::now() && $seckill->end_at>\Carbon\Carbon::now())
-                                                        立即抢购
+                                                    @if(Auth::check())
+                                                        @if($seckill->start_at<\Carbon\Carbon::now() && $seckill->end_at>\Carbon\Carbon::now())
+                                                            立即抢购
+                                                            @elseif($seckill->start_at>\Carbon\Carbon::now())
+                                                                抢购倒计时中
+                                                            @else
+                                                            抢购已结束
+                                                        @endif
                                                         @elseif($seckill->start_at>\Carbon\Carbon::now())
                                                             抢购倒计时中
                                                         @else
-                                                        抢购已结束
+                                                            请先登录
                                                     @endif
                                                 </span>
                                             </button>
@@ -243,8 +249,10 @@
                      if(ishas){
                          obj.html('<span>秒杀结束</span>');
                      }else{
+                         @if(Auth::check())
                          obj.html("<span>立即抢购</span>");
                          countDown($this,endAt);
+                         @endif
                      }
                      obj.toggleClass('btn-cart');
                  });
