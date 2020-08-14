@@ -20,6 +20,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
         "mews/captcha": "^3.1",
+        "overtrue/easy-sms": "^1.1",
         "overtrue/laravel-lang": "^4.0",
         "tymon/jwt-auth": "^1.0",
         "yansongda/pay": "^2.9"
