@@ -52,12 +52,14 @@ class PaymentController extends Controller
     }
     // 服务器端回调
     public function alipayReturn(){
+        /*
         try {
             $data=app('alipay')->verify();
             \Log::debug('Alipay notify', $data->all());
         } catch (\Exception $e) {
             return view('errors.index', ['message' => '数据不正确'.$e->getMessage()]);
         }
+        */
 
         return view('errors.index', ['message' => '付款成功']);
     }
