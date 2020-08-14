@@ -10,3 +10,21 @@
         </div>
     </div>
 @endsection
+@section('scriptAfterJs')
+    <script>
+        $(document).ready(function () {
+            /* Header Cart */
+            $('.header-carticon').on('click', function (e) {
+                e.preventDefault();
+                $(this).toggleClass('is-active');
+                $('.header-minicart').slideToggle();
+            });
+            /* Accountbox */
+            $('.header-accountbox-trigger').on('click', function () {
+                $('.header-accountbox').slideToggle();
+            });
+            /* Custom Selectbox */
+            $('select').niceSelect();
+        });
+    </script>
+@endsection
