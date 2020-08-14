@@ -90,7 +90,7 @@
                                         </div>
                                         @if(count($seckill->product->skus)==1)
                                         <div class="hoproduct-rattingbox float-right">
-                                            <button  id="sec{{ $seckill->product->skus[0]->id }}" class="btn-danger {{ $seckill->start_at<=\Carbon\Carbon::now() && $seckill->end_at>\Carbon\Carbon::now()?'btn-cart':'' }}">
+                                            <button  id="sec{{ $seckill->product->skus[0]->id }}" class="btn-danger {{ $seckill->start_at<=\Carbon\Carbon::now() && $seckill->end_at>\Carbon\Carbon::now() && Auth::check()?'btn-cart':'' }}">
                                                 <!--<i class="lnr lnr-cart"></i>-->
                                                 <span>
                                                     @if(Auth::check())
