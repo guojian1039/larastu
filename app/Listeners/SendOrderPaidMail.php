@@ -29,6 +29,6 @@ class SendOrderPaidMail implements ShouldQueue
     {
         // 从事件对象中取出对应的订单
         $order = $event->getOrder();
-        //$order->user->notify(new OrderPaidNotification($order));
+        $order->user->notify(new OrderPaidNotification($order));
     }
 }
