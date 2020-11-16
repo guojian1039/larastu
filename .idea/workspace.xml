@@ -4,127 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/Services/ProductService.php" line="102" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c5d5903-1bd0-4b06-9571-d7baeccec364" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/.gitignore" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/action.js.map" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/action.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/images/logo.png" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/images/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Actions/Grid/TranslateProduct.php" afterPath="$PROJECT_DIR$/app/Admin/Actions/Grid/TranslateProduct.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Controllers/ActiveProductsController.php" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ActiveProductsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Controllers/AdsController.php" afterPath="$PROJECT_DIR$/app/Admin/Controllers/AdsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Controllers/BrandsController.php" afterPath="$PROJECT_DIR$/app/Admin/Controllers/BrandsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Controllers/CategoryController.php" afterPath="$PROJECT_DIR$/app/Admin/Controllers/CategoryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Controllers/CommonProductsController.php" afterPath="$PROJECT_DIR$/app/Admin/Controllers/CommonProductsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Controllers/DiscountProductsController.php" afterPath="$PROJECT_DIR$/app/Admin/Controllers/DiscountProductsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Controllers/OrdersController.php" afterPath="$PROJECT_DIR$/app/Admin/Controllers/OrdersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Controllers/ProductsController.php" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ProductsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Controllers/UsersController.php" afterPath="$PROJECT_DIR$/app/Admin/Controllers/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Render/ProductPics.php" afterPath="$PROJECT_DIR$/app/Admin/Render/ProductPics.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/routes.php" afterPath="$PROJECT_DIR$/app/Admin/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Exceptions/InternalException.php" afterPath="$PROJECT_DIR$/app/Exceptions/InternalException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AccountsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AccountsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthorizationsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthorizationsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ImagesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ImagesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UsersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationCodesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationCodesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DiscountsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DiscountsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/AcceptHeader.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/AcceptHeader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/ParseToken.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/ParseToken.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/Api/ImageRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/ImageRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/Api/UserRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/UserRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/Api/VerificationCodeRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/VerificationCodeRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Resources/CategoryResource.php" afterPath="$PROJECT_DIR$/app/Http/Resources/CategoryResource.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Resources/CrowdfundingProductResource.php" afterPath="$PROJECT_DIR$/app/Http/Resources/CrowdfundingProductResource.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Resources/ProductResource.php" afterPath="$PROJECT_DIR$/app/Http/Resources/ProductResource.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Resources/SeckillProductResource.php" afterPath="$PROJECT_DIR$/app/Http/Resources/SeckillProductResource.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Jobs/CloseOrder.php" afterPath="$PROJECT_DIR$/app/Jobs/CloseOrder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Listeners/UpdateProductRating.php" afterPath="$PROJECT_DIR$/app/Listeners/UpdateProductRating.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Brand.php" afterPath="$PROJECT_DIR$/app/Models/Brand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Category.php" afterPath="$PROJECT_DIR$/app/Models/Category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/CouponCode.php" afterPath="$PROJECT_DIR$/app/Models/CouponCode.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Order.php" afterPath="$PROJECT_DIR$/app/Models/Order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/OrderItem.php" afterPath="$PROJECT_DIR$/app/Models/OrderItem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Product.php" afterPath="$PROJECT_DIR$/app/Models/Product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/ProductSku.php" afterPath="$PROJECT_DIR$/app/Models/ProductSku.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Shop.php" afterPath="$PROJECT_DIR$/app/Models/Shop.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/User.php" afterPath="$PROJECT_DIR$/app/Models/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/UserAddress.php" afterPath="$PROJECT_DIR$/app/Models/UserAddress.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Notifications/OrderPaidNotification.php" afterPath="$PROJECT_DIR$/app/Notifications/OrderPaidNotification.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/CartService.php" afterPath="$PROJECT_DIR$/app/Services/CartService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/OrderService.php" afterPath="$PROJECT_DIR$/app/Services/OrderService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/ProductService.php" afterPath="$PROJECT_DIR$/app/Services/ProductService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/UserService.php" afterPath="$PROJECT_DIR$/app/Services/UserService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap/helpers.php" afterPath="$PROJECT_DIR$/bootstrap/helpers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/admin.php" afterPath="$PROJECT_DIR$/config/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/services.php" afterPath="$PROJECT_DIR$/config/services.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2020_08_03_162119_create_shops_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_08_03_162119_create_shops_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dcat_admin_ide_helper.php" afterPath="$PROJECT_DIR$/dcat_admin_ide_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/com.js" afterPath="$PROJECT_DIR$/public/js/com.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte-blue-dark.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte-blue-dark.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte-blue-light.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte-blue-light.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte-blue.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte-blue.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte-green.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte-green.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte.js" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte.js.map" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/adminlte/adminlte.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/css/dcat-app-blue-dark.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/css/dcat-app-blue-dark.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/css/dcat-app-blue-light.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/css/dcat-app-blue-light.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/css/dcat-app-blue.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/css/dcat-app-blue.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/css/dcat-app-green.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/css/dcat-app-green.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/css/dcat-app.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/css/dcat-app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/action.js" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/action.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/grid-extend.js" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/grid-extend.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/grid-extend.js.map" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/grid-extend.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload-blue-dark.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload-blue-dark.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload-blue-light.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload-blue-light.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload-blue.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload-blue.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload-green.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload-green.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload.css" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload.js" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload.js.map" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/extra/upload.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/js/dcat-app.js" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/js/dcat-app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/js/dcat-app.js.map" afterPath="$PROJECT_DIR$/public/vendors/dcat-admin/dcat/js/dcat-app.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/zh-CN/admin.php" afterPath="$PROJECT_DIR$/resources/lang/zh-CN/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/zh-CN/category.php" afterPath="$PROJECT_DIR$/resources/lang/zh-CN/category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/zh-CN/global.php" afterPath="$PROJECT_DIR$/resources/lang/zh-CN/global.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/zh-CN/user.php" afterPath="$PROJECT_DIR$/resources/lang/zh-CN/user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/zh-TW/admin.php" afterPath="$PROJECT_DIR$/resources/lang/zh-TW/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/accounts/_menu.blade.php" afterPath="$PROJECT_DIR$/resources/views/accounts/_menu.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/accounts/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/accounts/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/addresses/create_and_edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/addresses/create_and_edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/addresses/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/addresses/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/orders/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/orders/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cart/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/cart/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/coupon_codes/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/coupon_codes/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/discounts/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/discounts/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/favorites/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/favorites/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/product.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/product.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/products.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/products.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/_header.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/_header.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/orders/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/orders/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/orders/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/orders/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api.php" afterPath="$PROJECT_DIR$/routes/api.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Admin/Repositories/UserAddress.php" afterPath="$PROJECT_DIR$/app/Admin/Render/UserAddress.php" />
-    </list>
+    <list default="true" id="1c5d5903-1bd0-4b06-9571-d7baeccec364" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -612,12 +492,12 @@
       <workItem from="1604625289413" duration="1274000" />
       <workItem from="1604644333788" duration="680000" />
       <workItem from="1604885509214" duration="768000" />
-      <workItem from="1605491134676" duration="1406000" />
+      <workItem from="1605491134676" duration="2001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1005653000" />
+    <option name="totallyTimeSpent" value="1006248000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
