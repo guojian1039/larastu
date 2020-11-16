@@ -56,11 +56,11 @@ class CouponCode extends Model
         if ($this->min_amount > 0) {
             $str = '满'.str_replace('.00', '', $this->min_amount);
         }
-        if ($this->type === self::TYPE_PERCENT) {
-            return $str.'优惠'.str_replace('.00', '', $this->value).'%';
+        if ($this->couponType['type']===1) {
+            return $str.'优惠'.str_replace('.00', '', $this->couponType['value']).'%';
         }
 
-        return $str.'减'.str_replace('.00', '', $this->value);
+        return $str.'减'.str_replace('.00', '', $this->couponType['value']);
     }
 
     public function checkAvailable($orderAmount = null)

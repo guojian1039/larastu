@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserAddress extends Model
 {
     use \App\Models\Traits\DefaultDatetimeFormat;
-    protected $fillable=['province','city','district','zip','address','contact_name','contact_phone'];
+    protected $fillable=['province','city','district','zip','address','contact_name','contact_phone','is_default'];
     protected $dates=['last_used_at'];
     protected $appends=['full_address'];
     public function user()

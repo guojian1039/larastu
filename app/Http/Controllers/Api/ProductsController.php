@@ -8,6 +8,8 @@ use App\Http\Resources\SeckillProductResource;
 use App\Models\Product;
 use App\Services\ProductService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
 class ProductsController extends Controller
 {
     protected $productService;
@@ -30,7 +32,24 @@ class ProductsController extends Controller
 
         $limit=$request->input('limit',9);
         $include=$request->input('include','');
-        $products=$this->productService->getProducts(Product::TYPE_NORMAL,$search,$category_id,null,$order,$include);
+        $is_new=$request->input('is_new',0);
+        $is_recommend=$request->input('is_recommend',0);
+        $is_hot=$request->input('is_hot',0);
+        $max_price=$request->input('max_price',0);
+        $min_price=$request->input('min_price',0);
+        $brand_ids=$request->input('brand_ids','');
+        $category_ids=$request->input('category_ids','');
+
+        $extra=[
+            'is_new'=>$is_new,
+            'is_recommend'=>$is_recommend,
+            'is_hot'=>$is_hot,
+            'max_price'=>$max_price,
+            'min_price'=>$min_price,
+            'brand_ids'=>$brand_ids,
+            'category_ids'=>$category_ids
+        ];
+        $products=$this->productService->getProducts(Product::TYPE_NORMAL,$search,$category_id,null,$order,$include,$extra);
         return ProductResource::collection($products);
     }
     //商品详情
@@ -39,8 +58,10 @@ class ProductsController extends Controller
         if(!$product->on_sale){
             throw new InvalidRequestException('商品未上架');
         }
-        $product->append('is_favorite');
-        $product->append('reviews');
+        //$product->append('is_favorite');
+        //$product->append('reviews');
+        $product->append('coupons');
+        $product->load(['skus','pics']);
         return new ProductResource($product);
     }
     //商品收藏
@@ -66,5 +87,27 @@ class ProductsController extends Controller
     {
         $products= $this->productService->getProducts(Product::TYPE_DISCOUNT);
         return ProductResource::collection($products);
+    }
+    public function isFavorite(Request $request){
+        $favored=0;
+        if($request->user()){
+            $favorite_Ids=$this->productService->getFavoriteIds($request->user()->id);
+            if(in_array($request->input('id'),$favorite_Ids)){
+                $favored=1;
+            }
+        }
+        return $favored;
+    }
+
+    public function getReviews(Product $product,Request $request){
+        return $product->evaluation;
+    }
+    public function reviews(Request $request){
+        $explain_type=$request->input('explain_type','');
+        $has_cover=$request->input('has_cover','');
+        $product_id=$request->input('id',0);
+        $reviews= app(ProductService::class)->getProductReviews($product_id,['explain_type'=>$explain_type,'has_cover'=>$has_cover]);
+
+        return $reviews;
     }
 }

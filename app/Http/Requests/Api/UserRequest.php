@@ -16,17 +16,17 @@ class UserRequest extends FormRequest
         {
             case 'POST':
                 return [
-                    'name' => 'required|between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,name',
+                    'username' => 'required|between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,username',
                     'password'=>'required|alpha_dash|min:6',
                     'verification_key'=>'required|string',
                     'verification_code'=>'required|string',
                 ];
                 break;
-            case 'PATCH':
+            case 'PUT':
                 $userId = auth('api')->id();
                 return [
-                    'name' => 'between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,name,'.$userId,
-                    'avatar_image_id'=>'exists:images,id,type,avatar,user_id,'.$userId,
+                    'username' => 'between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,username,'.$userId,
+                    //'avatar_image_id'=>'exists:images,id,type,avatar,user_id,'.$userId,
                     'introduction'=>'max:80',
                     'email'=>'email|unique:users,email,'.$userId
                 ];

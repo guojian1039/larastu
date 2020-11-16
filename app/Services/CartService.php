@@ -55,7 +55,12 @@ class CartService{
         {
             $skuIds=[$skuIds];
         }
-        Auth::user()->cartItems()->whereIn('product_sku_id',$skuIds)->delete();
+        if(count($skuIds)>0){
+            Auth::user()->cartItems()->whereIn('product_sku_id',$skuIds)->delete();
+        }
+        else{
+            Auth::user()->cartItems()->delete();
+        }
     }
     public function updateCarts($items)
     {
@@ -69,5 +74,23 @@ class CartService{
            }
            return true;
         });
+    }
+
+    public function changeCartsSku($old_sku_id,$new_sku_id){
+        $sku=Auth::user()->cartItems()->where('product_sku_id',$old_sku_id)->first();
+        if($sku){
+            $sku->update(['product_sku_id'=>$new_sku_id]);
+            $sku->save();
+        }
+        return true;
+    }
+
+    public function cartItemUpdateNum($sku_id,$amount){
+        $sku=Auth::user()->cartItems()->where('product_sku_id',$sku_id)->first();
+        if($sku){
+            $sku->update(['amount'=>$amount]);
+            $sku->save();
+        }
+        return true;
     }
 }

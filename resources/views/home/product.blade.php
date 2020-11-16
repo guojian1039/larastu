@@ -8,7 +8,7 @@
             @if($different_class!='hoproduct-4 guoguo')
             <ul class="hoproduct-actionbox">
                 @if(Auth::check())
-                <li><a href="javascript:void(0);" data-id="{{ $product->id }}"><i class="lnr lnr-cart"></i></a></li>
+                <li><a href="javascript:void(0);" data-id="{{ $product->sku_id }}"><i class="lnr lnr-cart"></i></a></li>
                 @endif
                 <li><a href="javascript:void(0);" data-id="{{ $product->id }}" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
                 @if(Auth::check())

@@ -11,8 +11,10 @@ use App\Http\Requests\OrderRequest;
 use App\Http\Requests\SeckillOrderRequest;
 use App\Http\Requests\SendReviewRequest;
 use App\Jobs\CloseOrder;
+use App\Models\Coupon;
 use App\Models\CouponCode;
 use App\Models\Order;
+use App\Models\OrderCount;
 use App\Models\OrderItem;
 use App\Models\ProductSku;
 use App\Models\UserAddress;
@@ -22,7 +24,12 @@ use Illuminate\Http\Request;
 
 class OrdersController extends Controller
 {
-    public function store(OrderRequest $request,OrderService $orderService){
+    protected $orderService;
+    public function __construct(OrderService $orderService)
+    {
+        $this->orderService=$orderService;
+    }
+    public function store(OrderRequest $request){
         $address_id=$request->input('address_id');
         $remark=$request->input('remark','');
         $items=$request->input('items');
@@ -30,7 +37,7 @@ class OrdersController extends Controller
 
         // 如果用户提交了优惠码
         if ($code = $request->input('coupon_code')) {
-            $coupon = CouponCode::where('code', $code)->first();
+            $coupon = Coupon::where('code', $code)->first();
             if (!$coupon) {
                 throw new CouponCodeUnavailableException('优惠券不存在');
             }
@@ -71,16 +78,16 @@ class OrdersController extends Controller
         });
        $this->dispatch(new CloseOrder($order,config('app.order_ttl')));
         */
-        $order=$orderService->saveOrder($address_id,$items,$remark,$coupon);
+        $order=$this->orderService->saveOrder($address_id,$items,$remark,$coupon);
        return $order;
     }
-    public function index(Request $request,OrderService $orderService){
+    public function index(Request $request){
         /*
         $user=$request->user();
         $orders=$user->orders()->with(['items.product','items.productSku'])
             ->orderBy('created_at','desc')->paginate();
         */
-        $orders=$orderService->getOrders();
+        $orders=$this->orderService->getOrders();
         return view('orders.index',['orders'=>$orders]);
     }
     public function show(Order $order){
@@ -98,8 +105,7 @@ class OrdersController extends Controller
         if($order->ship_status!==Order::SHIP_STATUS_DELIVERED){
             throw new InvalidRequestException('发货状态不正确');
         }
-        // 更新发货状态为已收到
-        $order->update(['ship_status'=>Order::SHIP_STATUS_RECEIVED]);
+        $this->orderService->received($order);
         // 返回原页面
         return $order;
     }
@@ -131,39 +137,23 @@ class OrdersController extends Controller
             throw new InvalidRequestException('该订单已评价，不可重复提交');
         }
         $reviews = $request->input('reviews');
-        // 开启事务
-        \DB::transaction(function () use ($reviews, $order) {
-            // 遍历用户提交的数据
-            foreach ($reviews as $review) {
-                $orderItem = $order->items()->find($review['id']);
-                // 保存评分和评价
-                $orderItem->update([
-                    'rating'      => $review['rating'],
-                    'review'      => $review['review'],
-                    'reviewed_at' => Carbon::now(),
-                ]);
-            }
-            // 将订单标记为已评价
-            $order->update(['reviewed' => true]);
-            event(new OrderReviewed($order));
-        });
-
+        $this->orderService->review($reviews,$order);
         return redirect()->back();
     }
 
-    public function crowdfunding(CrowdFundingOrderRequest $request,OrderService $orderService){
+    public function crowdfunding(CrowdFundingOrderRequest $request){
         $sku_id=$request->input('sku_id');
         $amount=$request->input('amount');
         $address_id=$request->input('address_id');
-        $order=$orderService->crowdfunding($address_id,$sku_id,$amount);
+        $order=$this->orderService->crowdfunding($address_id,$sku_id,$amount);
         return $order;
     }
-    public function seckill(SeckillOrderRequest $request,OrderService $orderService){
+    public function seckill(SeckillOrderRequest $request){
         $sku_id=$request->input('sku_id');
         //$address_id=$request->input('address_id');
         //$address=UserAddress::query()->find($address_id);
         $sku=ProductSku::query()->find($sku_id);
-        $order=$orderService->seckill($request->user(),$request->input('address'),$sku);
+        $order=$this->orderService->seckill($request->user(),$request->input('address'),$sku);
         return $order;
     }
 

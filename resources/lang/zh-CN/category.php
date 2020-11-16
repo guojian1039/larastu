@@ -2,6 +2,7 @@
 return [
     'labels' => [
         'Category' => '分类',
+        'Categories'=>'分类',
         'uploader.drag_file'=>'打开',
     ],
     'fields' => [

@@ -1,8 +1,24 @@
 @extends('layouts.app')
 @section('title',"订单详情")
 @section('content')
-    <div class="row">
-        <div class="col-lg-12">
+    <!-- Breadcrumb Area -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-grey">
+            <li class="breadcrumb-item"><a href="{{ route('accounts.index') }}">个人中心</a></li>
+            <li class="breadcrumb-item active" aria-current="page">我的收藏</li>
+        </ol>
+    </nav>
+    <!--// Breadcrumb Area -->
+    <!-- Page Conttent -->
+    <main class="page-content">
+        <!-- Shopping Cart Area -->
+        <div class="favorite-page-area ptb-20 bg-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        @include('accounts._menu')
+                    </div>
+        <div class="col-lg-9">
             <div class="card">
                 <div class="card-header">
                     <h4>订单详情</h4>
@@ -108,6 +124,7 @@
                                 <div class="payment-buttons">
                                     <a class="btn btn-primary btn-sm" href="{{ route('payment.alipay', ['order' => $order->id]) }}">支付宝支付</a>
                                     <a class="btn btn-success btn-sm" href="{{ route('payment.wechat', ['order' => $order->id]) }}">微信支付</a>
+                                    <a class="btn btn-danger btn-sm" href="#" data-id="{{ $order->total_amount }}"  id="webself">账户支付</a>
                                 </div>
                              @endif
                         <!-- 支付按钮结束 -->
@@ -131,10 +148,12 @@
             </div>
         </div>
     </div>
+            </div>
+        </div>
+    </main>
     <!-- Newsletter Area -->
     @include('layouts._subscribe')
     <!--// Newsletter Area -->
-    </main>
 @endsection
 @section('scriptAfterJs')
     <script>
@@ -189,6 +208,40 @@
             });
             /* Custom Selectbox */
             $('select').niceSelect();
+
+
+            $('#webself').click(function () {
+                var total_amount=$(this).data('id');
+                swal({text:'您订单需要支付'+total_amount,buttons:['取消','确定']}).then(function (res) {
+                    if(res==null){
+                        return;
+                    }
+                    axios.post('{{ route('payment.webself',['order'=>$order->id]) }}').then(function () {
+                        swal('支付成功', '', 'success').then(function () {
+                            // 用户点击弹框上按钮时重新加载页面
+                            location.reload();
+                        });
+                    },function (error) {
+                        if(error.response.status===401){
+                            swal('请先登录','','error')
+                        }else if(error.response.status===555 && error.response.data.message){
+                            swal(error.response.data.message,'','error')
+                        }else if(error.response.status===422){
+                            var html='<div>';
+                            _.each(error.respnse.errors,function (errors) {
+                                _.each(errors,function (error) {
+                                    html+=error+'<br>';
+                                })
+                            })
+                            html+='</div>';
+                            swal({content:$(html)[0],icon:'error'});
+                        }else
+                        {
+                            swal('系统错误','','error')
+                        }
+                    })
+                })
+            });
         });
     </script>
 @endsection

@@ -111,6 +111,7 @@
         $('#btn-refund-disagree').click(function () {
            swal({
                title: '输入拒绝退款理由',
+               //text:"输入拒绝退款理由",
                input: 'text',
                showCancelButton: true,
                confirmButtonText: "确认",

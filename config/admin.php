@@ -11,7 +11,7 @@ return [
     | login page.
     |
     */
-    'name' => '商业电子商务系统',
+    'name' => 'Dcat Admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<img src="/vendors/dcat-admin/images/logo.png" width="35"> &nbsp;商业电子商务系统',
+    'logo' => '<img src="/vendors/dcat-admin/images/logo.png" width="35"> &nbsp;Dcat Admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -85,7 +85,7 @@ return [
     | Html title for all pages.
     |
     */
-    'title' => 'erp',
+    'title' => 'Admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -156,7 +156,7 @@ return [
         | The global Grid action display class.
         |--------------------------------------------------------------------------
         */
-        'grid_action_class' => Dcat\Admin\Grid\Displayers\Actions::class,
+        'grid_action_class' => Dcat\Admin\Grid\Displayers\DropdownActions::class,
     ],
 
     /*
@@ -300,10 +300,18 @@ return [
     | Admin map field provider
     |--------------------------------------------------------------------------
     |
-    | Supported: "tencent", "google", "yandex".
+    | Supported: "tencent", "google", "yandex", "baidu".
     |
     */
-    'map_provider' => 'google',
+    'map' => [
+        'provider' => 'baidu',
+
+        'keys' => [
+            'tencent' => env('TENCENT_MAP_API_KEY'),
+            'google' => env('GOOGLE_API_KEY'),
+            'baidu' => env('BAIDU_MAP_API_KEY'),
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -320,7 +328,8 @@ return [
 
         'sidebar_collapsed' => false,
 
-        'sidebar_dark' => false,
+        // light, primary, dark
+        'sidebar_style' => 'light',
 
         'dark_mode_switch' => false,
 

@@ -32,13 +32,13 @@ class TranslateProduct extends RowAction
         switch ($this->type)
         {
             case Product::TYPE_ACTIVE:
-                $actio_nname = '活动商品';
+                $actio_nname = '搞活动';
                 break;
             case Product::TYPE_CROWDFUNDING:
-                $actio_nname = '众筹商品';
+                $actio_nname = '众筹';
                 break;
             case Product::TYPE_SECKILL:
-                $actio_nname ='秒杀商品';
+                $actio_nname ='秒杀';
                 break;
             case Product::TYPE_DISCOUNT:
                 $actio_nname ='折扣商品';

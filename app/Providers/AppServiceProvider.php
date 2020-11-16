@@ -1,6 +1,12 @@
 <?php
 
 namespace App\Providers;
+use App\Models\Announce;
+use App\Models\CouponType;
+use App\Models\News;
+use App\Observers\AnnounceObserver;
+use App\Observers\CouponObserver;
+use App\Observers\NewsObserver;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Monolog\Logger;
@@ -58,7 +64,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        \Schema::defaultStringLength(191);
         \View::composer(['layouts._header'], \App\Http\ViewComposers\CategoryTreeComposer::class);
         JsonResource::withoutWrapping();
+        Announce::observe(AnnounceObserver::class);
+        CouponType::observe(CouponObserver::class);
+        News::observe(NewsObserver::class);
     }
 }

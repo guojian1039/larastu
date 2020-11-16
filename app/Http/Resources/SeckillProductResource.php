@@ -16,6 +16,7 @@ class SeckillProductResource extends JsonResource
     {
         $data= parent::toArray($request);
         $rdata=$data['product'];
+        $rdata['image']=url_image($rdata['image']);
         $rdata['start_at']=$data['start_at'];
         $rdata['end_at']=$data['end_at'];
         return $rdata;

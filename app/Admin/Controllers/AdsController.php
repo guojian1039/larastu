@@ -29,7 +29,7 @@ class AdsController extends AdminController
                 return '<img src="/storage/'.$value.'" width=120 height=50>';
             });
             $grid->width('宽度');
-            $grid->width('高度');
+            $grid->height('高度');
             $grid->setActionClass(Grid\Displayers\Actions::class);
             $grid->actions(function ($action){
                 $action->disableView();

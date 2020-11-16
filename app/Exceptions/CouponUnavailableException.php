@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Exceptions;
+
+use App\Http\Requests\Request;
+use Exception;
+use Throwable;
+
+class CouponUnavailableException extends Exception
+{
+    public function __construct($message = "", $code = 403, Throwable $previous = null)
+    {
+        parent::__construct($message, $code, $previous);
+    }
+    public function render(Request $request){
+        // 如果用户通过 Api 请求，则返回 JSON 格式的错误信息
+        if ($request->expectsJson()) {
+            return response()->json(['message' => $this->message], $this->code);
+        }
+        // 否则返回上一页并带上错误信息
+        return redirect()->back()->withErrors(['coupon_code' => $this->message]);
+    }
+}

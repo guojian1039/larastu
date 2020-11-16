@@ -10,7 +10,9 @@
     "require": {
         "php": "^7.2.5",
         "barryvdh/laravel-debugbar": "^3.3",
+        "bavix/laravel-wallet": "^5.3",
         "dcat/laravel-admin": "^1.6",
+        "endroid/qr-code": "^3.9",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "gregwar/captcha": "^1.1",
@@ -21,9 +23,14 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
         "mews/captcha": "^3.1",
+        "mews/purifier": "^3.3",
         "overtrue/easy-sms": "^1.1",
         "overtrue/laravel-lang": "^4.0",
+        "overtrue/laravel-socialite": "~2.0",
+        "overtrue/laravel-wechat": "~5.0",
+        "overtrue/pinyin": "~4.0",
         "tymon/jwt-auth": "^1.0",
+        "wythe/logistics": "^1.0",
         "yansongda/pay": "^2.9"
     },
     "require-dev": {

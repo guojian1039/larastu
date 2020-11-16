@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use App\Services\CouponService;
 use App\Services\ProductService;
 use App\Models\Traits\DefaultDatetimeFormat;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -23,8 +25,9 @@ class Product extends Model
           self::TYPE_DISCOUNT=>'折扣商品',
           self::TYPE_ACTIVE=>'活动商品'
       ];
-      protected $fillable=['title','description','image','on_sale','rating','sold_count','review_count','price','discount_num','original_price','type'];
+      protected $fillable=['title','description','image','on_sale','rating','sold_count','review_count','sku_id','price','discount_num','original_price','type','unit'];
       protected $casts=['on_sale'=>'boolean'];
+
       //public $timestamps=false;
       public function skus()
       {
@@ -68,19 +71,34 @@ class Product extends Model
           }
           return $favored;
       }
-      //商品评论
+      //商品评论--废弃
       public function getReviewsAttribute()
       {
-          $reviews=[];
-          $reviews= app(ProductService::class)->getProductReviews($this->id,10);
-          return $reviews;
+          return $this->id;
       }
 
+      //优惠券领取
+    public function getCouponsAttribute(){
+       $list= app(CouponService::class)->canReceiveCoupon();
+       return $list;
+    }
     public static function boot()
     {
         parent::boot();
         static ::created(function (Product $product){
             $product->pics()->create(['image'=>$product['image'],'description'=>'封面']);
          });
+    }
+    public function props(){
+        return $this->hasMany(ProductProperty::class);
+    }
+    public function brand(){
+        return $this->belongsTo(Brand::class);
+    }
+    public function supplier(){
+        return $this->belongsTo(Supplier::class);
+    }
+    public function evaluation(){
+        return $this->hasOne(ProductEvaluation::class);
     }
 }

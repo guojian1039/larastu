@@ -22,4 +22,10 @@ class ImagesController extends Controller
 
         return new ImageResource($image);
     }
+    public function upload(ImageRequest $request,ImageUploadHandler $uploader){
+        $user = $request->user();
+        $size = $request->type == 'review' ? 512 : 1024;
+        $result = $uploader->save($request->image, Str::plural($request->type), $user->id, $size);
+        return $result;
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Exceptions\InvalidRequestException;
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use App\Services\ProductService;
@@ -25,12 +26,24 @@ class ProductsController extends Controller
         // 是否有提交 order 参数，如果有就赋值给 $order 变量
         // order 参数用来控制商品的排序规则
         $order = $request->input('order', '');
-
-        $products=$this->productService->getProducts(Product::TYPE_NORMAL,$search,$category_id,null,$order);
+        $brandIds=$request->input('brands','');
+        $params=null;
+        if($brandIds){
+            $params['brand_ids']=explode(',',trim($brandIds,','));
+        }
+        $products=$this->productService->getProducts(Product::TYPE_NORMAL,$search,$category_id,null,$order,null,$params);
 
         $limit=$request->input('limit',9);
 
         $active_products=$this->productService->getProducts(Product::TYPE_DISCOUNT,'','',$limit);
+
+        $brands=[];
+        if($category_id){
+            $cateIds=Category::query()->where('path','like','-'.$category_id.'-%')->get('id')->toArray();
+            $cateIds= array_column($cateIds,'id');
+            $cateIds[]=$category_id;
+            $brands=\DB::table('brands','a')->leftJoin('brand_categories as b','a.id','=','b.brand_id')->whereIn('b.category_id',$cateIds)->distinct()->get('a.*');
+        }
 
         $i=6;
         $actives=[];
@@ -62,12 +75,16 @@ class ProductsController extends Controller
         return view('products.index',
             [
                 'products'=>$products,
-                'filters'=>['search'=>$search,
-                 'category_id'=>$category_id,
-                 'order'=>$order],
+                'filters'=>[
+                    'search'=>$search,
+                    'category_id'=>$category_id,
+                    'order'=>$order,
+                    'brands'=>$brandIds
+                    ],
                 'skill_products'=>$actives,
                 'favorite_Ids'=>$favorite_Ids,
-                'categories'=>$categoryInfo
+                'categories'=>$categoryInfo,
+                'brands'=>$brands
                 ]);
     }
     public function show(Product $product,Request $request)
@@ -103,15 +120,8 @@ class ProductsController extends Controller
     }
     //收藏列表
     public function favorites(Request $request,UserService $service){
-        $pageNum=$request->input('pageNo',6);
-        $products=$service->userFavorites($request->user(),$pageNum);
-
-        $pageNum=$request->input('pageNo',6);
-
-        $products=$service->userFavorites($request->user(),$pageNum);
-
+        $products=$service->userFavorites($request->user());
         $watchs=$this->productService->getProducts(Product::TYPE_NORMAL,'','',18,'id_desc','category');
-
         $favorite_Ids=$this->productService->getFavoriteIds();
         return view('favorites.index',['products'=>$products,'sproducts'=>$watchs,'favorite_Ids'=>$favorite_Ids]);
     }

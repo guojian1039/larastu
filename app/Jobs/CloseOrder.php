@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\Order;
+use App\Services\OrderService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -42,6 +43,7 @@ class CloseOrder implements ShouldQueue
         if($this->order->paid_at){
             return;
         }
+        /*
         // 通过事务执行 sql
         \DB::transaction(function (){
             // 将订单的 closed 字段标记为 true，即关闭订单
@@ -63,5 +65,7 @@ class CloseOrder implements ShouldQueue
             }
         });
 
+        */
+        app(OrderService::class)->closeOrder($this->order);
     }
 }

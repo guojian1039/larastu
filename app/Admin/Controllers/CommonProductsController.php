@@ -3,6 +3,7 @@ namespace App\Admin\Controllers;
 use App\Admin\Actions\Grid\UploadPic;
 use App\Models\ProductPic;
 use App\Models\ProductSku;
+use App\Models\Supplier;
 use Dcat\Admin\Controllers\AdminController;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
@@ -10,6 +11,7 @@ use App\Models\Category;
 use \App\Models\Product;
 use Dcat\Admin\Layout\Content;
 use Dcat\Admin\Show;
+use Illuminate\Support\Facades\Log;
 
 abstract  class CommonProductsController extends  AdminController
 {
@@ -31,7 +33,6 @@ abstract  class CommonProductsController extends  AdminController
     {
         $grid = new Grid(new Product());
         $grid->model()->where('type',$this->getProductType())->orderBy('id', 'desc');;
-
         /*
         $grid->actions(function ($action){
             //$action->disableView();
@@ -80,22 +81,41 @@ abstract  class CommonProductsController extends  AdminController
                 {
                     return [$category->id=>$category->full_name];
                 }
-            });
+            })->load('brand_id', '/api/brands');
+        $form->select('brand_id','品牌');
         $form->image('image', __('封面'))->rules('required|image')->move("product")->uniqueName();
-        $form->textarea('description', __('描述'))->rules('required');
         $form->switch('on_sale', __('是否上架'))->default(1);
         $form->switch('recommend', __('是否推荐'))->default(1);
         $this->customForm($form);
+        $form->textarea('description', __('描述'))->rules('required');
 
-        $form->hasMany('skus', '商品 SKU', function (Form\NestedForm $form) {
-            $form->text('title', 'SKU 名称')->rules('required');
-            $form->text('description', 'SKU 描述')->rules('required');
-            $form->text('price', '单价')->rules('required|numeric|min:0.01');
-            $this->specialSku($form);
-            $form->text('stock', '剩余库存')->rules('required|integer|min:0');
+        // 设置默认卡片宽度
+        $form->setDefaultBlockWidth(6);
+
+        // 分块显示
+        $form->block(6, function (Form\BlockForm $form) {
+            $form->text('unit', __('商品单位'));
+            $form->select('supplier_id','供应商')->options(function ($id) {
+                $supplier = Supplier::find($id);
+
+                if ($supplier) {
+                    return [$supplier->id => $supplier->name];
+                }
+            })->ajax('api/suppliers');
+
+            $form->hasMany('skus', 'SKUS', function (Form\NestedForm $form) {
+                $form->text('title', 'SKU 名称')->rules('required');
+                $form->text('description', 'SKU 描述')->rules('required');
+                $form->text('price', '单价')->rules('required|numeric|min:0.01');
+                $this->specialSku($form);
+                $form->text('cost_price', '成本价')->rules('required|numeric|min:0.01');
+                $form->text('stock', '剩余库存')->rules('required|integer|min:0');
+            });
         });
-        $form->disableViewButton();
 
+        $form->disableViewButton();
+        $form->disableViewCheck();
+        $form->disableEditingCheck();
         /*
             $form->hasMany('pics','图片集合',function (Form\NestedForm $form){
                $form->image('image','图片')->rules('required')->move("product")->uniqueName()->thumbnail('small',100,100);
@@ -142,6 +162,17 @@ abstract  class CommonProductsController extends  AdminController
             }
 
         });
+        $form->saved(function (Form $form, $result) {
+            // 在表單保存後獲取eloquent
+            $product=$form->repository()->eloquent();
+            foreach ($product->skus as $sku)
+            {
+                if($sku->price==$product->price){
+                    $product->update(['sku_id'=>$sku->id]);
+                    break;
+                }
+            }
+        });
         return $form;
     }
 
@@ -169,8 +200,8 @@ abstract  class CommonProductsController extends  AdminController
             */
             $show->title('商品名称');
             $show->image('封面')->unescape()->as(function ($value){
-                $value=url_image($value);
-                return "<img src=$value width='300' height='200'/>";
+                $src=url_image($value);
+                return "<img src='{$src}' width='300' height='200'/>";
             });
             $show->description('描述');
             /*
@@ -199,7 +230,10 @@ abstract  class CommonProductsController extends  AdminController
                 $grid->price('价格');
                 $grid->stock('库存');
                 $grid->original_price('原价');
-
+                $grid->column('property','属性')->display(function () {
+                    //return admin_url('products/'.$this->id.'/properties');
+                    return "<a href='/admin/products/$this->id/skuproperties'>属性</a>";
+                });
                 $grid->filter(function ($filter) {
                     $filter->like('title')->width('2000px');
                 });

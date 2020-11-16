@@ -2,10 +2,13 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\Grid\Refund;
+use App\Admin\Actions\Grid\Ship;
 use App\Exceptions\InvalidRequestException;
 use App\Http\Requests\Admin\HandleRefundRequest;
 use App\Models\CrowdfundingProduct;
 use App\Models\Order;
+use App\Models\OrderCount;
 use App\Services\OrderService;
 use Dcat\Admin\Controllers\AdminController;
 use Dcat\Admin\Form;
@@ -63,6 +66,15 @@ class OrdersController extends AdminController
         });
 
         $grid->setActionClass(Grid\Displayers\Actions::class);
+        $grid->actions(function ($actions){
+            if($this->refund_status==Order::REFUND_STATUS_APPLIED){
+                $actions->append(new Refund());
+            }
+            //$this->refund_stauts==Order::REFUND_STATUS_PENDING &&
+            else if($this->refund_status==Order::REFUND_STATUS_PENDING && $this->ship_status===Order::SHIP_STATUS_PENDING){
+                $actions->append(new Ship());
+            }
+        });
         return $grid;
     }
 
@@ -89,10 +101,12 @@ class OrdersController extends AdminController
             throw new InvalidRequestException('该订单已发货');
         }
         $data= $this->validate($request,['express_company'=>['required'],'express_no'=>['required']],[],['express_company'=>'物流公司','express_no'=>'物流单号']);
-        $order->update(['ship_status'=>Order::SHIP_STATUS_DELIVERED,'ship_data'=>$data]);
-        //返回上一页
-
-        return redirect()->back();
+        $order->update(['ship_status'=>Order::SHIP_STATUS_DELIVERED,'ship_data'=>$data,'ship_time'=>Carbon::now()]);
+        //待发货订单减少
+        app(OrderService::class)->decreaseOrderCount($order,OrderCount::ORDER_TYPE_APPLIED);
+        //待收货订单增加
+        app(OrderService::class)->increaseOrderCount($order,OrderCount::ORDER_TYPE_DELIVERED);
+        return redirect()->route('admin.orders.index');
     }
     public function handleRefund(Order $order,HandleRefundRequest $request,OrderService $orderService){
         // 判断订单状态是否正确
@@ -110,6 +124,11 @@ class OrdersController extends AdminController
             // 调用退款逻辑
             //$this->_refundOrder($order);
             $orderService->refundOrder($order);
+
+            //已收货订单减少
+            app(OrderService::class)->decreaseOrderCount($order,OrderCount::ORDER_TYPE_RECEIVED);
+            //退款售后订单增加
+            app(OrderService::class)->increaseOrderCount($order,OrderCount::ORDER_TYPE_REFUND);
         }else{
             $extra=$order->extra?:[];
             $extra['refund_disagree_reason']=$request->input('reason');

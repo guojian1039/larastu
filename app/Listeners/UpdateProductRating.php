@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use App\Events\OrderReviewed;
 use App\Models\OrderItem;
+use App\Models\ProductEvaluation;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
@@ -42,6 +43,34 @@ class UpdateProductRating implements ShouldQueue
                 'rating'       => $result->rating,
                 'review_count' => $result->review_count,
             ]);
+            $good_num=0;
+            $ordinary_num=0;
+            $negative_num=0;
+            $cover_num=0;
+            if($item->rating>3){
+                $good_num=1;
+            }else if($item->rating>1){
+                $ordinary_num=1;
+            }else {
+                $negative_num=1;
+            }
+            if($item->review_images){
+                $cover_num=1;
+            }
+            $evaluation=ProductEvaluation::query()->where('product_id',$item->product_id)->first();
+            if($evaluation){
+                $evaluation->update([
+                    'good_num'=>$evaluation->good_num+$good_num,
+                    'ordinary_num'=>$evaluation->ordinary_num+$ordinary_num,
+                    'negative_num'=>$evaluation->negative_num+$negative_num,
+                    'cover_num'=>$evaluation->cover_num+$cover_num]);
+            }else{
+                ProductEvaluation::query()->create([
+                    'good_num'=>$good_num,
+                    'ordinary_num'=>$ordinary_num,
+                    'negative_num'=>$negative_num,
+                    'cover_num'=>$cover_num]);
+            }
         }
     }
 }

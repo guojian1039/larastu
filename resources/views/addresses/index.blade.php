@@ -22,7 +22,7 @@
                         <div class="card panel-default">
                             <div class="card-header">
                                 收货地址列表
-                                <a href="{{ route('addresses.create') }}" class="float-right">新增</a>
+                                <a href="{{ route('addresses.create') }}" class="btn btn-primary float-right">新增</a>
                             </div>
                             <div class="card-body">
                                 <table class="table table-bordered table-striped">

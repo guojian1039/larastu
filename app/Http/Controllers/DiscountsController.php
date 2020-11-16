@@ -42,7 +42,18 @@ class DiscountsController extends Controller
                 $builder->where('category_id',$category->id);
             }
         }
-
+        $brands=[];
+        if($category_id){
+            $cateIds=Category::query()->where('path','like','-'.$category_id.'-%')->get('id')->toArray();
+            $cateIds= array_column($cateIds,'id');
+            $cateIds[]=$category_id;
+            $brands=\DB::table('brands','a')->leftJoin('brand_categories as b','a.id','=','b.brand_id')->whereIn('b.category_id',$cateIds)->distinct()->get('a.*');
+        }
+        $brandIds=$request->input('brands','');
+        $params=null;
+        if($brandIds){
+            $params['brand_ids']=explode(',',trim($brandIds,','));
+        }
         // 是否有提交 order 参数，如果有就赋值给 $order 变量
         // order 参数用来控制商品的排序规则
         if ($order = $request->input('order', '')) {
@@ -54,6 +65,10 @@ class DiscountsController extends Controller
                     $builder->orderBy($m[1], $m[2]);
                 }
             }
+        }
+        //品牌
+        if(isset($params['brand_ids'])){
+            $builder->whereIn('brand_id',$params['brand_ids']);
         }
         $products= $builder->orderBy('id','desc')->paginate(9);
 
@@ -70,9 +85,10 @@ class DiscountsController extends Controller
         return view('discounts.index',
               [
                   'products'=>$products,
-               'filters'=>['search'=>$search,'category_id'=>$category_id,'order'=>$order],
-               'favorite_Ids'=>$favorite_Ids,
-                'categories'=>$categoryInfo
+                  'filters'=>['search'=>$search,'category_id'=>$category_id,'order'=>$order,'brands'=>$brandIds],
+                  'favorite_Ids'=>$favorite_Ids,
+                  'categories'=>$categoryInfo,
+                  'brands'=>$brands
               ]);
     }
 }

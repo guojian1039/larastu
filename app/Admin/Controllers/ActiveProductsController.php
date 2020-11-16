@@ -9,6 +9,7 @@ use Dcat\Admin\Show;
 
 class ActiveProductsController extends CommonProductsController
 {
+    protected $title='活动商品';
     public function getProductType()
     {
         return Product::TYPE_ACTIVE;

@@ -63,7 +63,7 @@
                                             </a>
                                             <ul class="hoproduct-actionbox">
                                                 @if(Auth::check())
-                                                <li><a href="javascript:void(0);" data-id="{{ $product->id }}"><i class="lnr lnr-cart"></i></a></li>
+                                                <li><a href="javascript:void(0);" data-id="{{ $product->sku_id }}"><i class="lnr lnr-cart"></i></a></li>
                                                 @endif
                                                 <li><a href="javascript:void(0);" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
                                                     @if(Auth::check())
@@ -118,7 +118,7 @@
                                 <h5 class="widget-title">商品目录</h5>
                                 <ul>
                                     @foreach($categories as $category)
-                                    <li><a href="#">{{ $category->name }} <span>{{ $category->product_count }}</span></a></li>
+                                    <li><a href="?category_id={{ $category->id }}">{{ $category->name }} <span>{{ $category->product_count }}</span></a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -139,6 +139,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--
                                 <div class="single-widget widget-color">
                                     <h5 class="widget-title">商品属性</h5>
                                     <ul>
@@ -176,32 +177,20 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <!--
+                                -->
+                                @if(count($brands)>0)
                                 <div class="single-widget widget-manufacturer">
                                     <h5 class="widget-title">商品品牌</h5>
                                     <ul>
+                                        @foreach($brands as $brand)
                                         <li>
-                                            <input type="checkbox" name="shop-widget-manufacturer-dell" id="shop-widget-manufacturer-dell" checked="checked">
-                                            <label for="shop-widget-manufacturer-dell">联想</label>
+                                            <input type="radio" @if($filters['brands']==$brand->id) checked @endif value="{{ $brand->id }}"   name="shop-widget-manufacturer">
+                                            <label for="shop-widget-manufacturer">{{ $brand->name }}</label>
                                         </li>
-                                        <li>
-                                            <input type="checkbox" name="shop-widget-manufacturer-asus" id="shop-widget-manufacturer-asus" checked="checked">
-                                            <label for="shop-widget-manufacturer-asus">华为</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" name="shop-widget-manufacturer-apple" id="shop-widget-manufacturer-apple">
-                                            <label for="shop-widget-manufacturer-apple">小米</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" name="shop-widget-manufacturer-hp" id="shop-widget-manufacturer-hp">
-                                            <label for="shop-widget-manufacturer-hp">大华</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" name="shop-widget-manufacturer-sony" id="shop-widget-manufacturer-sony">
-                                            <label for="shop-widget-manufacturer-sony">海康威视</label>
-                                        </li>
+                                        @endforeach
                                     </ul>
-                                </div>-->
+                                </div>
+                                @endif
                             </div>
 
                             <!-- Recommended Product -->
@@ -247,6 +236,7 @@
             $('#search').val(filters.search);
 
             $('#category_id').val(filters.category_id);
+            $('.header-searchbox input[name="brands"]').val(filters.brands);
             if(filters.order){
                 $('.header-searchbox input[name="order"]').val(filters.order);
                 switch(filters.order){
@@ -336,6 +326,31 @@
                 $('.select-sortby-list').slideToggle();
             });
 
+
+            /*
+            $('.widget-manufacturer input').on('click',function () {
+                var brands='';
+                $('input[name=shop-widget-manufacturer]').each(function () {
+                    //$(this).prop('checked')
+                    if($(this).is(':checked')){
+                        brands+=$(this).val()+',';
+                    }
+                });
+                $('.header-searchbox input[name="brands"]').val(brands);
+                $('.header-searchbox').submit()
+            });
+            */
+            $('.widget-manufacturer input').on('click',function () {
+                var brands='';
+                $('input[name=shop-widget-manufacturer]').each(function () {
+                    //$(this).prop('checked')
+                    if($(this).is(':checked')){
+                        brands+=$(this).val()+',';
+                    }
+                });
+                $('.header-searchbox input[name="brands"]').val(brands);
+                $('.header-searchbox').submit()
+            });
 
             /* Header Cart */
             $('.header-carticon').on('click', function (e) {

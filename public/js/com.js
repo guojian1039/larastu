@@ -34,7 +34,26 @@ $(document).ready(function () {
         e.stopPropagation();
         storeCart(product_id);
     });
-    function storeCart(product_id) {
+    function storeCart(sku_id) {
+        axios.post('/cart',{
+            amount:1,
+            sku_id:sku_id
+        }).then(function () {
+            swal('加入购物车成功','','success').then(function () {
+                location.href='/cart';
+            })
+        },function (error) {
+            if(error.response && error.response.status===401){
+                swal('请先登录','','error').then(function () {
+                    location.href='/login';
+                })
+            }else if(error.response && error.response.data.message){
+                swal(error.response.data.message,'','error');
+            }else{
+                swal('系统错误','','error');
+            }
+        });
+        /*
         axios.post('/cart/add',{
             product_id:product_id
         }).then(function () {
@@ -52,5 +71,6 @@ $(document).ready(function () {
                 swal('系统错误','','error');
             }
         });
+        */
     }
 });

@@ -14,6 +14,8 @@ class CategoryResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        $data= parent::toArray($request);
+        $data['image']=url_image($data['image']);
+        return $data;
     }
 }

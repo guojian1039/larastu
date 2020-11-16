@@ -230,6 +230,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
-    'order_ttl'=>300,
+    'order_ttl'=>900,
     'seckill_order_ttl'=>300
 ];

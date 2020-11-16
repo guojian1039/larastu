@@ -8,9 +8,14 @@ use App\Models\Category;
 use App\Models\CrowdfundingProduct;
 use App\Models\Product;
 use App\Models\SeckillProduct;
+use App\Models\User;
+use App\Services\BorrowsService;
 use App\Services\ProductService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+
 class HomeController extends Controller
 {
     /**
@@ -28,11 +33,27 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
        //echo get_thumb_pic('e617fb3abde5cf8a3e0bb7fd8151ecff.jpg');
         //$s= $this->categoryService->getTopCategory();
          //exit();
+        /*
+        $info=  app('alipay')->app([
+            'out_trade_no'=>time(),// 订单编号，需保证在商户端不重复
+            'total_amount'=>1,// 订单金额，单位元，支持小数点后两位
+            'subject'=>'支付单1元钱',// 订单标题
+        ]);
+        */
+        /*
+        $date1 = \Carbon\Carbon::parse('2020-03-06 12:22:00');
+        $date2 = \Carbon\Carbon::parse('2020-03-05 12:21:00');
+
+        $diff = $date1->diffInDays(Carbon::now(),false);
+
+        var_dump($diff);
+        exit();
+        */
         $brands=Brand::all();
         $adrows=Ad::all();
         $ads=[];
@@ -163,7 +184,16 @@ class HomeController extends Controller
             $cateinfo[] =array_slice($category, $i * 3 ,3);
             $j=($i+1)*3;
         }
-
+        /*
+        if(Auth::check()){
+                    Auth::user()->deposit(10000);
+        }
+*/
+        /*
+        if(Auth::check()){
+            Auth::user()->withdraw(50);
+        }
+        */
         return view('home',[
             'brands'=>$brands,
             'ads'=>$ads,

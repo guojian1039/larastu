@@ -19,19 +19,19 @@ class CategoryController extends AdminController
     protected function grid()
     {
         return Grid::make(new Category(), function (Grid $grid) {
-            $grid->id->sortable();
+            $grid->number();
             $grid->name->tree();
-            $grid->is_directory->display(function ($value){
-                return $value?'是':'否';
-            });
+
+
             $grid->level->display(function ($value){
                 return $value+1;
             });
-            $grid->path;
+
+            //$grid->path;
             //$grid->opt->display('查看')->modal('sdd');
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('id');
-        
+
             });
             $grid->setActionClass(Grid\Displayers\Actions::class);
             $grid->disableViewButton();
@@ -44,6 +44,9 @@ class CategoryController extends AdminController
                     $actions->append(CreateCategory::make());
                 });
             }
+            $grid->column('is_directory','是否目录')->display(function ($value){
+                return $value?'是':'否';
+            });
         });
     }
     /**
@@ -83,6 +86,22 @@ class CategoryController extends AdminController
         // 由于这里选择的是父类目，因此需要限定 is_directory 为 true
         $search = $request->input('q');
         $results=\App\Models\Category::query()->where('is_directory',boolval($request->input('is_directory',true)))
+            ->where('name','like','%'.$search.'%')->paginate();
+        // 把查询出来的结果重新组装成 Laravel-Admin 需要的格式
+        $results->setCollection($results->getCollection()->map(function ($category){
+            $item= ['id' => $category->id, 'text' => $category->full_name];
+            return $item;
+        }));
+        return $results;
+    }
+
+    // 定义下拉框搜索接口
+    public function allCategories(Request $request)
+    {
+        // 用户输入的值通过 q 参数获取
+        // 由于这里选择的是父类目，因此需要限定 is_directory 为 true
+        $search = $request->input('q');
+        $results=\App\Models\Category::query()
             ->where('name','like','%'.$search.'%')->paginate();
         // 把查询出来的结果重新组装成 Laravel-Admin 需要的格式
         $results->setCollection($results->getCollection()->map(function ($category){

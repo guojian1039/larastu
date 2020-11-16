@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Models;
+use Bavix\Wallet\Interfaces\Customer;
+use Bavix\Wallet\Traits\HasWallet;
 use Illuminate\Database\Eloquent\Model;
 use Ramsey\Uuid\Uuid;
-
-class Order extends Model
+use Bavix\Wallet\Interfaces\Product;
+class Order extends Model implements Product
 {
+    use HasWallet;
     use \App\Models\Traits\DefaultDatetimeFormat;
     const REFUND_STATUS_PENDING='pending';
     const REFUND_STATUS_APPLIED='applied';
@@ -37,8 +40,8 @@ class Order extends Model
         self::TYPE_SECKILL=>'秒杀订单'
     ];
     protected $fillable=['type','no','address','remark','payment_method','total_amount','payment_no','paid_at','reviewed',
-        'refund_no','refund_status','ship_status','ship_data','extra','closed'];
-    protected $dates=['paid_at'];
+        'refund_no','refund_status','ship_status','ship_data','ship_time','extra','closed'];
+    protected $dates=['paid_at','ship_time'];
     protected $casts=['reviewed'=>'boolean','closed'=>'boolean','address'=>'json','ship_data'=>'json','extra'=>'json'];
 
     protected static function boot()
@@ -77,9 +80,13 @@ class Order extends Model
     public function items(){
         return $this->hasMany(OrderItem::class);
     }
+    //废弃
     public function couponCode()
     {
         return $this->belongsTo(CouponCode::class);
+    }
+    public function invoice(){
+        return $this->hasOne(OrderInvoice::class);
     }
     public static function getAvailableRefundNo()
     {
@@ -90,5 +97,29 @@ class Order extends Model
         } while (self::query()->where('refund_no', $no)->exists());
 
         return $no;
+    }
+
+    public function canBuy(Customer $customer, int $quantity = 1, bool $force = null): bool
+    {
+        return true;
+    }
+    public function getAmountProduct(Customer $customer)
+    {
+        return $this->total_amount;
+    }
+    public function getMetaProduct(): ?array
+    {
+        return [
+            'title' => '订单号：'.$this->no,
+            'description' => 'order_id #' . $this->id,
+            'type'=>$this->refund_status
+        ];
+    }
+    public function getUniqueId(): string
+    {
+        return (string)$this->getKey();
+    }
+    public function shop(){
+        return $this->belongsTo(Shop::class);
     }
 }

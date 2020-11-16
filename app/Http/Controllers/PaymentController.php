@@ -6,12 +6,19 @@ use App\Events\OrderPaid;
 use App\Exceptions\InvalidRequestException;
 use App\Http\Requests\ApplyRefundRequest;
 use App\Models\Order;
+use App\Models\User;
+use App\Services\PaymentService;
 use Carbon\Carbon;
 use Endroid\QrCode\QrCode;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
+    protected $paymentService;
+    public function __construct(PaymentService $paymentService)
+    {
+        $this->paymentService=$paymentService;
+    }
     public function payByAlipay (Order $order){
         // 判断订单是否属于当前用户
         $this->authorize('own', $order);
@@ -28,29 +35,9 @@ class PaymentController extends Controller
     }
     // 前端回调页面
     public function alipayNotify(){
-        // 校验提交的参数是否合法
-        $data=app('alipay')->verify();
-        // 如果订单状态不是成功或者结束，则不走后续的逻辑
-        // 所有交易状态：https://docs.open.alipay.com/59/103672
-        if(!in_array($data->trade_status, ['TRADE_SUCCESS', 'TRADE_FINISHED'])) {
-            return app('alipay')->success();
-        }
-        // $data->out_trade_no 拿到订单流水号，并在数据库中查询
-        $order=Order::query()->where('no',$data->out_trade_no)->first();
-        // 正常来说不太可能出现支付了一笔不存在的订单，这个判断只是加强系统健壮性。
-        if(!$order){
-            return 'fail';
-        }
-        // 如果这笔订单的状态已经是已支付
-        if($order->paid_at){
-            // 返回数据给支付宝
-            return app('alipay')->success();
-        }
-        $order->update(['payment_method'=>'alipay','payment_no'=>$data->trade_no,'paid_at'=>Carbon::now()]);
-        $this->afterPaid($order);
-        return app('alipay')->success();
+       return $this->paymentService->alipayNotify();
     }
-    // 服务器端回调
+    // 支付宝服务器端回调
     public function alipayReturn(){
         /*
         try {
@@ -79,26 +66,9 @@ class PaymentController extends Controller
         // 将生成的二维码图片数据以字符串形式输出，并带上相应的响应类型
         return response($qrCode->writeString(), 200, ['Content-Type' => $qrCode->getContentType()]);
     }
+    //微信服务器端回调
     public function wechatNotify(){
-        $data=app('wechat_pay')->verify();
-        if(!in_array($data->trade_status,['TRADE_SUCCESS'])){
-            return app('wechat_pay')->success();
-        }
-        $order=Order::query()->where('no',$data->out_trade_no)->first();
-        if(!$order){
-            return 'fail';
-        }
-        // 订单已支付
-        if ($order->paid_at) {
-            // 告知微信支付此订单已处理
-            return app('wechat_pay')->success();
-        }
-        $order->update(['payment_no'=>$data->transaction_id,'payment_method'=>'wechat','paid_at'=>Carbon::now()]);
-        $this->afterPaid($order);
-        return app('wechat_pay')->success();
-    }
-    public function afterPaid(Order $order){
-        event(new OrderPaid($order));
+       return $this->paymentService->wechatNotify();
     }
     //申请退货，退款
     public function applyRefund(Order $order,ApplyRefundRequest $request){
@@ -149,5 +119,22 @@ class PaymentController extends Controller
         }
 
         return app('wechat_pay')->success();
+    }
+
+    public function payByWeb(Order $order,PaymentService $service){
+        // 判断订单是否属于当前用户
+        $this->authorize('own', $order);
+        // 订单已支付或者已关闭
+        if ($order->paid_at || $order->closed) {
+            throw new InvalidRequestException('订单状态不正确',555);
+        }
+        $user=$order->user;
+        $wallet=$user->balance;
+        if($wallet<$order->total_amount){
+            throw new InvalidRequestException('账户余额不足',555);
+        }
+        $user->pay($order);
+        $service->myNotify($order);
+        return $order;
     }
 }

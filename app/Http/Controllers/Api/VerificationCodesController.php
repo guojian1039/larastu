@@ -15,6 +15,7 @@ class VerificationCodesController extends Controller
         //生成4随机数，左侧补零
         $code=str_pad(random_int(1,9999),4,0,STR_PAD_LEFT);
         $captcha_key=$request->captcha_key;
+        $usage=$request->usage;
         $captData=\Cache::get($captcha_key);
 
         if(!$captData){
@@ -28,7 +29,7 @@ class VerificationCodesController extends Controller
         if(app()->environment('production')){
             try{
                 $request=$easySms->send($phone,[
-                    'template'=>config('easysms.gateways.aliyun.templates.register'),
+                    'template'=>config('easysms.gateways.aliyun.templates.'.$usage),
                     'data'=>[
                         'code'=>$code
                     ],]);

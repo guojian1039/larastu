@@ -1,5 +1,5 @@
 <?php
-namespace App\Renders;
+namespace App\Admin\Renders;
 use App\Admin\Actions\Grid\TranslateProduct;
 use App\Models\Product;
 use App\Models\ProductPic as PicModel;

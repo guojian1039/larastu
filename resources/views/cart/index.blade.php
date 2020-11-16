@@ -4,7 +4,7 @@
     <!-- Breadcrumb Area -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-grey">
-            <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('accounts.index') }}">个人中心</a></li>
             <li class="breadcrumb-item active" aria-current="page">我的购物车</li>
         </ol>
     </nav>
@@ -98,7 +98,7 @@
                                     <p>请输入优惠券.</p>
                                     <form action="#" class="coupon-form">
                                         <input type="text" name="coupon_code" placeholder="Coupon code">
-                                        <span class="form-text text-muted" id="coupon_desc"></span>
+                                        <span style="margin:1.25rem;" class="form-text text-muted vertical-middle" id="coupon_desc"></span>
                                         <button  type="button" class="ho-button btn-success" id="btn-check-coupon">
                                             <span>使用</span>
                                         </button>
@@ -267,7 +267,12 @@
                                        支付宝
                                     </label>
                                 </div>
-
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment_method" id="self" value="webself">
+                                    <label class="form-check-label" for="self">
+                                        账户余额
+                                    </label>
+                                </div>
                                 <div class="form-check disabled">
                                     <input class="form-check-input" type="radio" name="payment_method" id="we" value="wechat" disabled>
                                     <label class="form-check-label" for="we">
@@ -604,6 +609,12 @@
                 axios.post('{{ route('orders.store') }}',req).then(function (response) {
                     if(payment_method=='alipay'){
                         location.href='payment/'+response.data.id+'/'+payment_method;
+                    }else if(payment_method=='webself'){
+                        axios.post('payment/'+response.data.id+'/'+payment_method).then(function (response) {
+                            swal('支付成功','','success').then(function () {
+                                location.reload();
+                            })
+                        });
                     }else{
                         //location.href='orders/'+response.data.id;
                         swal({
@@ -646,7 +657,7 @@
                     return;
                 }
                 // 调用检查接口
-                axios.get('/coupon_codes/' + encodeURIComponent(code))
+                axios.get('/coupon/' + encodeURIComponent(code))
                     .then(function (response) {  // then 方法的第一个参数是回调，请求成功时会被调用
                         $('#coupon_desc').text(response.data.description); // 输出优惠信息
                         $('input[name=coupon_code]').prop('readonly', true); // 禁用输入框

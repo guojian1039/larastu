@@ -16,4 +16,7 @@ class Brand extends Model
         }
         return image_url($this->image);
     }
+    public function categories(){
+        return $this->belongsToMany(Category::class,'brand_categories');
+    }
 }

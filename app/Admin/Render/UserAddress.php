@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Repositories;
+namespace App\Admin\Renders;
 use Dcat\Admin\Support\LazyRenderable;
 use Dcat\Admin\Widgets\Table;
 use App\Models\UserAddress as UserAddressModel;

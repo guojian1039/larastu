@@ -35,6 +35,7 @@
                         </select>
                         <input type="text" id="search" name="search" placeholder="请输入关键字 ...">
                         <input type="hidden" name="order">
+                        <input type="hidden" name="brands">
                         <button type="submit"><i class="lnr lnr-magnifier"></i></button>
                     </form>
                 </div>
@@ -54,7 +55,7 @@
                         <div class="header-icons">
                             <div class="header-account">
                                 <button class="header-accountbox-trigger"><!-- <span class="lnr lnr-user"></span>-->
-                                        <img src="https://cdn.learnku.com/uploads/images/201801/03/1/MFCtSTiGzj.jpg" class="img-responsive img-circle" width="30px" height="30px">
+                                        <img src="{{ Auth::user()->avatar }}" class="img-responsive img-circle" width="30px" height="30px">
                                         {{ Auth::user()->name }}
                                     <i class="ion ion-ios-arrow-down"></i></button>
                                 <ul class="header-accountbox dropdown-list text-center">
@@ -71,7 +72,7 @@
                                         <a href="{{ route('orders.index') }}">我的订单</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('acounts.index') }}">个人中心</a>
+                                        <a href="{{ route('accounts.index') }}">个人中心</a>
                                     </li>
                                     <li>
                                         @include('layouts._logout')
@@ -153,18 +154,23 @@
                             <li class="{{ active_class(if_route('crowdfunding_products.index')) }}  {{ active_class(if_route('crowdfunding_products.show')) }}">
                                 <a href="{{ route('crowdfunding_products.index') }}">商品众筹</a>
                             </li>
-                            <li class="{{ active_class(if_route('coupon_codes.index')) }}">
-                                <a href="{{ route('coupon_codes.index') }}">优惠券</a>
+                            <li class="{{ active_class(if_route('coupon_types.index')) }}">
+                                <a href="{{ route('coupon_types.index') }}">优惠券</a>
                             </li>
                             <li class="{{ active_class(if_route('discounts.index')) }}">
                                 <a href="{{ route('discounts.index') }}"> 折扣店</a>
                             </li>
-                            <li>
-                                <a href="/">金融中心</a>
+                            <li class="{{ active_class(if_route('borrows.index')) }}">
+                                <a href="{{ route('borrows.index') }}">金融中心</a>
                             </li>
-                            <li>
-                                <a href="/"> 博客中心</a>
+                            <li class="{{ active_class(if_route('announces.index')) }}">
+                                <a href="{{ route('announces.index') }}"> 通知公告</a>
                             </li>
+                            @if(if_route(['accounts.index','addresses.index','addresses.create','borrows.myborrow','borrows.repay.index','borrows.myinvest','invest.repay.index','products.favorites','cart.index','users.deposit','users.withdraw','users.wallets','orders.index','orders.show']))
+                                <li class="active">
+                                    <a href="{{ route('accounts.index') }}"> 个人中心</a>
+                                </li>
+                            @endif
                         </ul>
                     </nav>
                     <!--// Navigation -->

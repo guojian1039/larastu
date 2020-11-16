@@ -10,6 +10,7 @@ use Dcat\Admin\Show;
 class DiscountProductsController extends CommonProductsController
 {
 
+    protected $title='折扣商品';
     public function getProductType()
     {
         return Product::TYPE_DISCOUNT;

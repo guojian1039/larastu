@@ -1,0 +1,43 @@
+<?php 
+return [
+    'labels' => [
+        'Borrows' => '融资列表',
+    ],
+    'fields' => [
+        'title' => '标题',
+        'user_id' => 'user_id',
+        'company_id' => 'company_id',
+        'duration' => '借款期限',
+        'money' => '融资额',
+        'rate' => '年化',
+        'fee' => '服务费',
+        'repayment_times' => '还款次数',
+        'repayment_already_times' => '已还完第几期',
+        'repayment_type' => '还款方式',
+        'collect_day' => '募集时间(天)',
+        'deal_time' => '初审时间',
+        'publish_time' => '发布时间',
+        'full_time' => '满标时间',
+        'redeal_time' => '复审时间',
+        'next_repaytime' => '下次还款时间',
+        'type' => '分类',
+        'area' => '专区',
+        'status' => '状态',
+        'use' => '用途',
+        'use_other' => '其他用途说明',
+        'deal_id' => '初审人',
+        'deal_name' => '初审人',
+        'deal_info' => '初审',
+        'redeal_id' => '复审人',
+        'redeal_name' => '复审人',
+        'redeal_info' => '复审',
+        'repayment_capital' => '归还本金',
+        'repayment_interest' => '归还利息',
+        'repayment_managefee' => '逾期管理费',
+        'repayment_overdue' => '逾期罚息费',
+        'borrow_des'=>'融资概述',
+        'risk'=>'风险控制'
+    ],
+    'options' => [
+    ],
+];

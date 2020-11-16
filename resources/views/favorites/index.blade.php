@@ -4,7 +4,7 @@
     <!-- Breadcrumb Area -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-grey">
-            <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('accounts.index') }}">个人中心</a></li>
             <li class="breadcrumb-item active" aria-current="page">我的收藏</li>
         </ol>
     </nav>
@@ -13,66 +13,82 @@
     <main class="page-content">
 
         <!-- Shopping Cart Area -->
-        <div class="cart-page-area ptb-30 bg-white">
+        <div class="favorite-page-area ptb-20 bg-white">
             <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        @include('accounts._menu')
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row row-cols-1 row-cols-md-12">
 
-                <!-- Cart Products -->
-                <div class="cart-table table-responsive">
-                    <table class="table table-bordered table-hover mb-0">
-                        <thead>
-                        <tr>
-                            <th class="cart-column-productname" scope="col">商品信息</th>
-                            <th class="cart-column-price" scope="col">单价</th>
-                            <th class="cart-column-quantity" scope="col">评分</th>
-                            <th class="cart-column-total" scope="col">销量</th>
-                            <th class="cart-column-remove" scope="col">操作</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($products as $product)
-                            <tr data-id="{{ $product->id }}">
-                                <td class="product_info">
-                                    <div class="preview">
-                                        @if($product->type === \App\Models\Product::TYPE_CROWDFUNDING)
-                                            <a target="_blank" href="{{ route('crowdfunding_products.show', ['product'=>$product->id]) }}">
-                                                <img width="100" height="80" src="{{ $product->image_url }}">
-                                            </a>
-                                            @else
-                                        <a target="_blank" href="{{ route('products.show', ['product'=>$product->id]) }}">
-                                            <img width="100" height="80" src="{{ $product->image_url }}">
-                                        </a>
-                                            @endif
-                                    </div>
-                                    <div @if(!$product->on_sale) class="not_on_sale" @endif>
+                            <div class="card">
+                                <div class="card-header">个人收藏</div>
+                                <div class="card-body">
+                                    <!-- Cart Products -->
+                                    <div class="cart-table table-responsive">
+                                        <table class="table table-bordered table-hover mb-0">
+                                            <thead>
+                                            <tr>
+                                                <th class="cart-column-productname" scope="col">商品信息</th>
+                                                <th class="cart-column-price" scope="col">单价</th>
+                                                <th class="cart-column-quantity" scope="col">评分</th>
+                                                <th class="cart-column-total" scope="col">销量</th>
+                                                <th class="cart-column-remove" scope="col">操作</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($products as $product)
+                                                <tr data-id="{{ $product->id }}">
+                                                    <td class="product_info">
+                                                        <div class="preview">
+                                                            @if($product->type === \App\Models\Product::TYPE_CROWDFUNDING)
+                                                                <a target="_blank" href="{{ route('crowdfunding_products.show', ['product'=>$product->id]) }}">
+                                                                    <img width="100" height="80" src="{{ $product->image_url }}">
+                                                                </a>
+                                                            @else
+                                                                <a target="_blank" href="{{ route('products.show', ['product'=>$product->id]) }}">
+                                                                    <img width="100" height="80" src="{{ $product->image_url }}">
+                                                                </a>
+                                                            @endif
+                                                        </div>
+                                                        <div @if(!$product->on_sale) class="not_on_sale" @endif>
                                       <span class="product_title">
                                           @if($product->type === \App\Models\Product::TYPE_CROWDFUNDING)
                                               <a target="_blank" href="{{ route('crowdfunding_products.show', ['product'=>$product->id]) }}">{{ $product->title }}</a>
-                                              @else
-                                                  <a target="_blank" href="{{ route('products.show', ['product'=>$product->id]) }}">{{ $product->title }}</a>
-                                            @endif
+                                          @else
+                                              <a target="_blank" href="{{ route('products.show', ['product'=>$product->id]) }}">{{ $product->title }}</a>
+                                          @endif
                                       </span>
+                                                        </div>
+                                                    </td>
+                                                    <td >￥<span class="sku-price">{{ $product->price }}</span></td>
+                                                    <td>
+                                                        {{ $product->rating }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $product->sold_count }}
+                                                    </td>
+                                                    <td>
+                                                        <button class="remove-product"><i class="ion ion-ios-close"></i></button>
+                                                    </td>
+                                                </tr>
+
+                                            @endforeach
+
+                                            </tbody>
+                                        </table>
                                     </div>
-                                </td>
-                                <td >￥<span class="sku-price">{{ $product->price }}</span></td>
-                                <td>
-                                    {{ $product->rating }}
-                                </td>
-                                <td>
-                                    {{ $product->sold_count }}
-                                </td>
-                                <td>
-                                    <button class="remove-product"><i class="ion ion-ios-close"></i></button>
-                                </td>
-                            </tr>
+                                    <!--//  Products -->
 
-                        @endforeach
-
-                        </tbody>
-                    </table>
+                                    {{ $products->render() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!--//  Products -->
+            </div>
 
-                {{ $products->render() }}
 
             </div>
         </div>

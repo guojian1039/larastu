@@ -118,7 +118,7 @@
                                 <h5 class="widget-title">商品目录</h5>
                                 <ul>
                                     @foreach($categories as $category)
-                                        <li><a href="#">{{ $category->name }} <span>{{ $category->product_count }}</span></a></li>
+                                        <li><a href="?category_id={{ $category->id }}">{{ $category->name }} <span>{{ $category->product_count }}</span></a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -139,7 +139,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="single-widget widget-color">
+
+                                @if(count($brands)>0)
+                                    <div class="single-widget widget-manufacturer">
+                                        <h5 class="widget-title">商品品牌</h5>
+                                        <ul>
+                                            @foreach($brands as $brand)
+                                                <li>
+                                                    <input type="radio" @if($filters['brands']==$brand->id) checked @endif value="{{ $brand->id }}"   name="shop-widget-manufacturer">
+                                                    <label for="shop-widget-manufacturer">{{ $brand->name }}</label>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                               <!-- <div class="single-widget widget-color">
                                     <h5 class="widget-title">商品属性</h5>
                                     <ul>
                                         <li>
@@ -176,7 +191,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <!--
+
                                 <div class="single-widget widget-manufacturer">
                                     <h5 class="widget-title">商品品牌</h5>
                                     <ul>
@@ -201,8 +216,8 @@
                                             <label for="shop-widget-manufacturer-sony">Sony</label>
                                         </li>
                                     </ul>
-                                </div>
-                                -->
+                                </div>-->
+
                             </div>
 
 
@@ -240,6 +255,7 @@
             $('#search').val(filters.search);
 
             $('#category_id').val(filters.category_id);
+            $('.header-searchbox input[name="brands"]').val(filters.brands);
             if(filters.order){
                 $('.header-searchbox input[name="order"]').val(filters.order);
                 switch(filters.order){
@@ -277,7 +293,17 @@
                         '<div class="countdown-pack countdown-day"><h3 class="countdown-count">%-D</h3><h6>Days</h6></div>:<div class="countdown-pack countdown-hour"><h3 class="countdown-count">%-H</h3><h6>Hour</h6></div>:<div class="countdown-pack countdown-minutes"><h3 class="countdown-count">%M</h3><h6>Min</h6></div>:<div class="countdown-pack countdown-seconds"><h3 class="countdown-count">%S</h3><h6>Sec</h6></div>'));
                 });
             });
-
+            $('.widget-manufacturer input').on('click',function () {
+                var brands='';
+                $('input[name=shop-widget-manufacturer]').each(function () {
+                    //$(this).prop('checked')
+                    if($(this).is(':checked')){
+                        brands+=$(this).val()+',';
+                    }
+                });
+                $('.header-searchbox input[name="brands"]').val(brands);
+                $('.header-searchbox').submit()
+            });
             $('.select-sortby-list li a').on('click',function () {
                 var order=$(this).data('order');
                 $('.header-searchbox input[name="order"]').val(order);

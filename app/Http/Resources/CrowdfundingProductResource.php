@@ -16,6 +16,7 @@ class CrowdfundingProductResource extends JsonResource
     {
         $data= parent::toArray($request);
         $rdata=$data['product'];
+        $rdata['image']=url_image($rdata['image']);
         $rdata['target_amount']=$data['target_amount'];
         $rdata['total_amount']=$data['total_amount'];
         $rdata['user_count']=$data['user_count'];

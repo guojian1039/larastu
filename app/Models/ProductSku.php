@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductSku extends Model
 {
     use DefaultDatetimeFormat;
-    protected $fillable=['title','description','image','price','original_price','stock'];
+    protected $fillable=['title','description','image','price','original_price','cost_price','stock'];
     public function product()
     {
         return $this->belongsTo(Product::class);
@@ -36,6 +36,10 @@ class ProductSku extends Model
             throw new InternalException('加库存不可小于零');
         }
        return $this->increment('stock',$amount);
+    }
+
+    public function props(){
+        return $this->hasMany(ProductSkuProperty::class);
     }
 
 }

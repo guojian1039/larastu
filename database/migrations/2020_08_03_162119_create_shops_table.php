@@ -22,6 +22,7 @@ class CreateShopsTable extends Migration
             $table->string('contact_name');
             $table->string('contact_phone');
             $table->string('cert');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

@@ -44,7 +44,7 @@
 
                                 <input id="captcha" class="form-control{{ $errors->has('captcha') ? ' is-invalid' : '' }}" name="captcha" required>
 
-                                <img class="thumbnail mt-3 mb-2" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha?'+Math.random()" title="点击图片重新获取验证码">
+                                <img class="thumbnail mt-3 mb-2" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码">
                                 @error('captcha')
                                     <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -86,10 +86,10 @@
 @endsection
 @section('scriptAfterJs')
     <script>
-        (function ($) {
+        $(document).ready(function () {
             'use strict';
             /* Custom Selectbox */
             $('select').niceSelect();
-        })
+        });
     </script>
 @endsection
