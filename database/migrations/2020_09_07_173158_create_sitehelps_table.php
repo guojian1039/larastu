@@ -22,7 +22,7 @@ class CreateSitehelpsTable extends Migration
             $table->unsignedInteger('sender_id')->comment('发送者id');
             $table->string('sender_name')->comment('发送者name');
             $table->unsignedInteger('sitehelp_type_id');
-            $table->foreign('sitehelp_type_id')->references('id')->on('sitehelp_types')->onDelete('cascade');
+            //$table->foreign('sitehelp_type_id')->references('id')->on('sitehelp_types')->onDelete('cascade');
             $table->timestamps();
         });
     }
