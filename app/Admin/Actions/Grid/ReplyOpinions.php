@@ -63,7 +63,7 @@ HTML;
         if(!$key){
             $key=$this->getKey();
         }
-        $form = new reply($key);
+        $form = new Reply($key);
 
         // 在弹窗标题处显示
         $title = '反馈';
