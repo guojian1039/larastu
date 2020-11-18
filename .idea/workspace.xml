@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c5d5903-1bd0-4b06-9571-d7baeccec364" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin/Actions/Grid/ReplyOpinions.php" afterPath="$PROJECT_DIR$/app/Admin/Actions/Grid/ReplyOpinions.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -110,9 +109,11 @@
       <file leaf-file-name="Reply.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Admin/Forms/Reply.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="7" />
-              <folding />
+            <state relative-caret-position="176">
+              <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="11" />
+              <folding>
+                <element signature="e#34#60#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,17 +121,16 @@
       <file leaf-file-name="ReplyOpinions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Admin/Actions/Grid/ReplyOpinions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="56" column="2" lean-forward="true" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
+            <state relative-caret-position="113">
+              <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
               <folding>
-                <element signature="e#42#70#0#PHP" expanded="true" />
-                <marker date="1605684829609" expanded="true" signature="871:918" ph="..." />
-                <marker date="1605684829609" expanded="true" signature="1625:2034" ph="..." />
-                <marker date="1605684829609" expanded="true" signature="1679:2027" ph="..." />
-                <marker date="1605684829609" expanded="true" signature="1711:2018" ph="..." />
-                <marker date="1605684829609" expanded="true" signature="1744:1937" ph="..." />
-                <marker date="1605684829609" expanded="false" signature="1902:1909" ph="×" />
-                <marker date="1605684829609" expanded="true" signature="1968:2007" ph="..." />
+                <marker date="1605686254451" expanded="true" signature="871:918" ph="..." />
+                <marker date="1605686254451" expanded="true" signature="1625:2034" ph="..." />
+                <marker date="1605686254451" expanded="true" signature="1679:2027" ph="..." />
+                <marker date="1605686254451" expanded="true" signature="1711:2018" ph="..." />
+                <marker date="1605686254451" expanded="true" signature="1744:1937" ph="..." />
+                <marker date="1605686254451" expanded="false" signature="1902:1909" ph="×" />
+                <marker date="1605686254451" expanded="true" signature="1968:2007" ph="..." />
               </folding>
             </state>
           </provider>
@@ -484,12 +484,12 @@
       <workItem from="1604885509214" duration="768000" />
       <workItem from="1605491134676" duration="4639000" />
       <workItem from="1605574892870" duration="393000" />
-      <workItem from="1605684648288" duration="188000" />
+      <workItem from="1605684648288" duration="820000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1009467000" />
+    <option name="totallyTimeSpent" value="1010099000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -916,25 +916,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/Forms/Reply.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="176">
+          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="11" />
+          <folding>
+            <element signature="e#34#60#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/Actions/Grid/ReplyOpinions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="56" column="2" lean-forward="true" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
+        <state relative-caret-position="113">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
           <folding>
-            <element signature="e#42#70#0#PHP" expanded="true" />
-            <marker date="1605684829609" expanded="true" signature="871:918" ph="..." />
-            <marker date="1605684829609" expanded="true" signature="1625:2034" ph="..." />
-            <marker date="1605684829609" expanded="true" signature="1679:2027" ph="..." />
-            <marker date="1605684829609" expanded="true" signature="1711:2018" ph="..." />
-            <marker date="1605684829609" expanded="true" signature="1744:1937" ph="..." />
-            <marker date="1605684829609" expanded="false" signature="1902:1909" ph="×" />
-            <marker date="1605684829609" expanded="true" signature="1968:2007" ph="..." />
+            <marker date="1605686254451" expanded="true" signature="871:918" ph="..." />
+            <marker date="1605686254451" expanded="true" signature="1625:2034" ph="..." />
+            <marker date="1605686254451" expanded="true" signature="1679:2027" ph="..." />
+            <marker date="1605686254451" expanded="true" signature="1711:2018" ph="..." />
+            <marker date="1605686254451" expanded="true" signature="1744:1937" ph="..." />
+            <marker date="1605686254451" expanded="false" signature="1902:1909" ph="×" />
+            <marker date="1605686254451" expanded="true" signature="1968:2007" ph="..." />
           </folding>
         </state>
       </provider>
