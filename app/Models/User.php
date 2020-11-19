@@ -53,7 +53,7 @@ class User extends Authenticatable implements  MustVerifyEmail, JWTSubject,Custo
     protected $fillable = [
         'name', 'email', 'password','username','phone','weixin_openid', 'weixin_unionid',
         'avatar','introduction','member_level','notification_count',
-        'birthday','qq','gender','lock','scores'
+        'birthday','qq','gender','lock','scores','email_verified_at'
     ];
 
     /**

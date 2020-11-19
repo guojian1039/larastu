@@ -12,6 +12,7 @@ use App\Services\AccountService;
 use App\Services\InvestService;
 use App\Services\ProductService;
 use App\Services\UserService;
+use Carbon\Carbon;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 
@@ -32,6 +33,7 @@ class UsersController extends Controller
             'name'=>$request->name,
             'phone'=>$verifyData['phone'],
             'password'=>$request->password,
+            'email_verified_at'=>Carbon::now()
         ]);
         //清除验证码缓存
         \Cache::delete($request->verification_key);
