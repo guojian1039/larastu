@@ -26,6 +26,7 @@ class VerificationCodesController extends Controller
             throw new InvalidRequestException('验证码错误',433);
         }
         if(app()->environment('production')){
+            /*
             try{
                 $request=$easySms->send($phone,[
                     'template'=>config('easysms.gateways.aliyun.templates.'.$usage),
@@ -36,6 +37,8 @@ class VerificationCodesController extends Controller
                 $message=$exception->getException('aliyun')->getMessage();
                 abort(500, $message ?: '短信发送异常');
             }
+            */
+            $code=1234;
         }else{
             $code=1234;
         }
