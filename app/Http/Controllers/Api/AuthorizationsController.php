@@ -6,17 +6,20 @@ use App\Exceptions\InvalidRequestException;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\AuthorizationRequest;
 use App\Http\Requests\Api\PhoneAuthorizationRequest;
+use App\Http\Requests\Api\ResetPasswordRequest;
 use App\Http\Requests\Api\SocialAuthorizationRequest;
 use App\Http\Requests\Api\WeappAuthorizationRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 //use Illuminate\Auth\AuthenticationException;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Overtrue\EasySms\EasySms;
 use Overtrue\LaravelSocialite\Socialite;
 use Overtrue\Socialite\AccessToken;
 class AuthorizationsController extends Controller
 {
     public function store(AuthorizationRequest $request){
-
         $username=$request->username;
         filter_var($username,FILTER_VALIDATE_EMAIL)?$credentials['email']=$username:$credentials['phone']=$username;
            $credentials['password']=$request->password;
@@ -31,17 +34,35 @@ class AuthorizationsController extends Controller
             abort(403,'验证码失效');
         }
         //hash_equals 是可防止时序攻击的字符串比较，那么什么是时序攻击呢？比如这段代码我们使用
-        if(!hash_equals((string)$verifyData['code'],$request->verification_code)){
+        if(!hash_equals((string)$verifyData['code'],$request->code)){
             //返回401
             throw new InvalidRequestException('验证码错误',433);
         }
-        $credentials['phone']=$request->phone;
-
-        if(!$token=\Auth::guard('api')->attempt($credentials)){
+        $user = User::where('phone', $request->phone)->first();
+        if(!$user || !$token=auth('api')->login($user)){
             throw new InvalidRequestException('用户名不存在',433);
         }
-
         return $this->responseWithToken($token)->setStatusCode(201);
+    }
+    //找回密码
+    public function resetPassword(ResetPasswordRequest $request){
+        $verifyData=\Cache::get($request->verification_key);
+        if(!$verifyData){
+            abort(403,'验证码失效');
+        }
+        //hash_equals 是可防止时序攻击的字符串比较，那么什么是时序攻击呢？比如这段代码我们使用
+        if(!hash_equals((string)$verifyData['code'],$request->code)){
+            //返回401
+            throw new InvalidRequestException('验证码错误',433);
+        }
+        $user = User::where('phone', $request->phone)->first();
+        if($user){
+            $user->password=Hash::make($request->password);
+            $user->save();
+        }else{
+            throw new InvalidRequestException('用户不存在',433);
+        }
+        return (new UserResource($user))->showSensitiveFields();
     }
     public function weappStore(WeappAuthorizationRequest $request)
     {

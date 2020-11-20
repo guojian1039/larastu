@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Requests\Api;
-class PhoneAuthorizationRequest extends FormRequest
+class ResetPasswordRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -13,7 +13,8 @@ class PhoneAuthorizationRequest extends FormRequest
         return [
             'phone' => 'required|string',
             'code'=>'required|string',
-            'verification_key'=>'required|string'
+            'verification_key'=>'required|string',
+            'password'=>'required|string'
         ];
     }
 }

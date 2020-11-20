@@ -65,6 +65,7 @@ Route::prefix('v1')
             Route::put('authorizations','AuthorizationsController@update')->name('authorizations.update');
             //删除token
             Route::delete('authorizations','AuthorizationsController@destroy')->name('authorizations.delete');
+            Route::put('resetPassword','AuthorizationsController@resetPassword')->name('authorizations.resetPassword');
         });
         Route::middleware('throttle:'.config('api.rate_limits.access'))->group(function (){
             // 某个用户的详情

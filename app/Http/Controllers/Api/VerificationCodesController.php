@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Api;
+use App\Exceptions\InvalidRequestException;
 use App\Http\Requests\Api\VerificationCodeRequest;
-use Illuminate\Auth\AuthenticationException;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Overtrue\EasySms\EasySms;
 
@@ -24,7 +23,7 @@ class VerificationCodesController extends Controller
         $captcha_code=$request->captcha_code;
         if(!hash_equals($captData['code'],(string)$captcha_code)){
             \Cache::delete($captcha_key);
-            throw new AuthenticationException('验证码错误');
+            throw new InvalidRequestException('验证码错误',433);
         }
         if(app()->environment('production')){
             try{
@@ -38,7 +37,7 @@ class VerificationCodesController extends Controller
                 abort(500, $message ?: '短信发送异常');
             }
         }else{
-            $code=12345;
+            $code=1234;
         }
         $key='verificationCode_'.Str::random(15);
         $expiredAt=now()->addMinutes(5);

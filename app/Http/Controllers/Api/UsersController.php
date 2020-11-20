@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
+use App\Exceptions\InvalidRequestException;
 use App\Http\Requests\Api\UserRequest;
 use App\Http\Resources\ProductResource;
 use App\Http\Resources\TransactionResource;
@@ -15,6 +16,7 @@ use App\Services\UserService;
 use Carbon\Carbon;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -25,18 +27,33 @@ class UsersController extends Controller
             abort(403,'验证码失效');
         }
         //hash_equals 是可防止时序攻击的字符串比较，那么什么是时序攻击呢？比如这段代码我们使用
-        if(!hash_equals((string)$verifyData['code'],$request->verification_code)){
+        if(!hash_equals((string)$verifyData['code'],$request->code)){
             //返回401
-            throw new AuthenticationException('验证码错误');
+            //throw new AuthenticationException('验证码错误');
+            throw new InvalidRequestException('验证码错误');
         }
-        $user=User::create([
-            'name'=>$request->name,
-            'phone'=>$verifyData['phone'],
-            'password'=>$request->password,
-            'email_verified_at'=>Carbon::now()
-        ]);
         //清除验证码缓存
         \Cache::delete($request->verification_key);
+       $build= User::query()->where('phone',$request->mobile);
+        if($request->username){
+            $build->orWhere('username',$request->username);
+        }
+        $user=$build->first();
+        if(!$user){
+            $user=User::create([
+                'name'=>$request->username,
+                'username'=>$request->username,
+                'phone'=>$request->mobile,
+                'password'=>Hash::make($request->password),
+                'email_verified_at'=>Carbon::now()
+            ]);
+            if($user){
+                $user->deposit(10000);
+            }
+        }else{
+            throw new InvalidRequestException('用户已经存在');
+        }
+
         return (new UserResource($user))->showSensitiveFields();
     }
     public function show(User $user){

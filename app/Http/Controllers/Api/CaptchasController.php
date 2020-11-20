@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\Api\CaptchaRequest;
 use Gregwar\Captcha\CaptchaBuilder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class CaptchasController extends Controller
@@ -16,7 +17,9 @@ class CaptchasController extends Controller
 
         $captcha=$captchaBuilder->build();
         $expiredAt=now()->addMinutes(2);
-        \Cache::put($key,['phone'=>(string)$phone,'code'=>(string)$captcha->getPhrase()],$expiredAt);
+        $code=(string)$captcha->getPhrase();
+        \Cache::put($key,['phone'=>(string)$phone,'code'=>$code],$expiredAt);
+        Log::info($code);
         $result=['captcha_key'=>$key,'expired_at'=>$expiredAt->toDateTimeString(),'captcha_image_content'=>$captcha->inline()];
 
         return response()->json($result)->setStatusCode(201);
