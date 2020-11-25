@@ -211,4 +211,45 @@ class UsersController extends Controller
         */
         return TransactionResource::collection($bills);
     }
+
+    public function depositUpdate(Request $request){
+        $verifyData=\Cache::get($request->verification_key);
+        if(!$verifyData){
+            abort(403,'验证码失效');
+        }
+        //hash_equals 是可防止时序攻击的字符串比较，那么什么是时序攻击呢？比如这段代码我们使用
+        if(!hash_equals((string)$verifyData['code'],$request->code)){
+            //返回401
+            throw new InvalidRequestException('验证码错误',433);
+        }
+        $info=$this->validate($request,
+            ['moneynum'=>'required|numeric'],
+            ['moneynum.required'=>':attribute 不能为空','moneynum.numeric'=>':attribute 为数值型'],
+            ['moneynum'=>'金额']);
+        if($info['moneynum']>0){
+            $request->user()->deposit($info['moneynum'],['type'=>'deposit']);
+        }
+        return [];
+    }
+
+    //提现
+    public function withdrawUpdate(Request $request){
+        $verifyData=\Cache::get($request->verification_key);
+        if(!$verifyData){
+            abort(403,'验证码失效');
+        }
+        //hash_equals 是可防止时序攻击的字符串比较，那么什么是时序攻击呢？比如这段代码我们使用
+        if(!hash_equals((string)$verifyData['code'],$request->code)){
+            //返回401
+            throw new InvalidRequestException('验证码错误',433);
+        }
+        $info=$this->validate($request,
+            ['moneynum'=>'required|numeric'],
+            ['moneynum.required'=>':attribute 不能为空','moneynum.numeric'=>':attribute 为数值型'],
+            ['moneynum'=>'金额']);
+        if($info['moneynum']>0){
+            $request->user()->withdraw($info['moneynum'],['type'=>'withdraw']);
+        }
+        return [];
+    }
 }

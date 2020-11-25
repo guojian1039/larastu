@@ -61,7 +61,7 @@ class UsersController extends Controller
         $info=$this->validate($request,
             ['moneynum'=>'required|numeric','captcha'=>'required|captcha'],
             ['moneynum.required'=>':attribute 不能为空','moneynum.numeric'=>':attribute 为数值型','captcha.required'=>':attribute 不能为空','captcha.captcha'=>'请输入正确的 :attribute'],
-            ['captcha'=>'验证码','money'=>'金额']);
+            ['captcha'=>'验证码','moneynum'=>'金额']);
         if($info['moneynum']>0){
             $request->user()->withdraw($info['moneynum'],['type'=>'withdraw']);
         }

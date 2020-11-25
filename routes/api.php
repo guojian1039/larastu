@@ -79,7 +79,8 @@ Route::prefix('v1')
                 Route::get('account','UsersController@account')->name('user.account');
                 //账单明细
                 Route::get('bills','UsersController@bills')->name('user.account.bills');
-
+                Route::post('deposit','UsersController@depositUpdate')->name('user.account.deposit');
+                Route::post('withdraw','UsersController@withdrawUpdate')->name('user.account.withdraw');
                 // 上传保存图片
                 Route::post('images', 'ImagesController@store')->name('images.store');
                 //上传图片
