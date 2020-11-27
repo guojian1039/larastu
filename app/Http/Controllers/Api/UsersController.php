@@ -48,7 +48,7 @@ class UsersController extends Controller
                 'email_verified_at'=>Carbon::now()
             ]);
             if($user){
-                $user->deposit(10000);
+                $user->deposit(10000,['type'=>'deposit']);
             }
         }else{
             throw new InvalidRequestException('用户已经存在');

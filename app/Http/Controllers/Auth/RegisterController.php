@@ -72,7 +72,10 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-         $user->balance;
+         //$user->balance;
+        if($user){
+            $user->deposit(10000,['type'=>'deposit']);
+        }
          return $user;
     }
 }
